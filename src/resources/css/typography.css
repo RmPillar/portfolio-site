@@ -1,0 +1,138 @@
+body {
+  @apply text-black;
+}
+
+.heading-xl {
+  @screen md {
+  }
+  @screen xl {
+  }
+}
+
+.heading-l {
+  @screen md {
+  }
+  @screen xl {
+  }
+}
+
+.heading {
+  @screen md {
+  }
+  @screen xl {
+  }
+}
+
+.heading-s {
+  @screen md {
+  }
+  @screen xl {
+  }
+}
+
+.heading-xs {
+  @screen md {
+  }
+  @screen xl {
+  }
+}
+
+.tagline {
+  @screen md {
+  }
+  @screen xl {
+  }
+}
+
+.copy-l {
+  @screen md {
+  }
+  @screen xl {
+  }
+}
+
+.copy {
+  @screen md {
+  }
+  @screen xl {
+  }
+}
+
+.copy-s {
+  @screen md {
+  }
+  @screen xl {
+  }
+}
+
+.rich-content {
+  @apply w-full;
+
+  > * + * {
+    @apply mt-4;
+
+    @screen xl {
+      @apply mt-6;
+    }
+  }
+
+  p,
+  li {
+    @apply copy;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    @apply -mb-4;
+
+    @screen xl {
+      @apply -mb-6;
+    }
+  }
+
+  h1 {
+    @apply heading-xl;
+  }
+  h2 {
+    @apply heading-l;
+  }
+  h3 {
+    @apply heading;
+  }
+  h4 {
+    @apply heading-s;
+  }
+  h5 {
+    @apply heading-xs;
+  }
+  h6 {
+    @apply tagline;
+  }
+
+  a {
+    @apply underline inline;
+  }
+
+  ul,
+  ol {
+    @apply pl-6;
+  }
+
+  ul {
+    list-style-type: disc;
+  }
+
+  ol {
+    list-style-type: decimal;
+  }
+
+  li {
+    &:not(:last-of-type) {
+      @apply mb-2;
+    }
+  }
+}
