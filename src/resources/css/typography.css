@@ -1,67 +1,150 @@
+@font-face {
+  font-family: 'Silka';
+  src: url('../../assets/font/silka/silka-light.woff2') format('woff2'),
+    url('../../assets/font/silka/silka-light.woff') format('woff'),
+    url('../../assets/font/silka/silka-light.eot') format('eot'),
+    url('../../assets/font/silka/silka-light.ttf') format('ttf');
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Silka';
+  src: url('../../assets/font/silka/silka-regular.woff2') format('woff2'),
+    url('../../assets/font/silka/silka-regular.woff') format('woff'),
+    url('../../assets/font/silka/silka-regular.eot') format('eot'),
+    url('../../assets/font/silka/silka-regular.ttf') format('ttf');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Silka';
+  src: url('../../assets/font/silka/silka-medium.woff2') format('woff2'),
+    url('../../assets/font/silka/silka-medium.woff') format('woff'),
+    url('../../assets/font/silka/silka-medium.eot') format('eot'),
+    url('../../assets/font/silka/silka-medium.ttf') format('ttf');
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Silka';
+  src: url('../../assets/font/silka/silka-semibold.woff2') format('woff2'),
+    url('../../assets/font/silka/silka-semibold.woff') format('woff'),
+    url('../../assets/font/silka/silka-semibold.eot') format('eot'),
+    url('../../assets/font/silka/silka-semibold.ttf') format('ttf');
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Silka';
+  src: url('../../assets/font/silka/silka-bold.woff2') format('woff2'),
+    url('../../assets/font/silka/silka-bold.woff') format('woff'),
+    url('../../assets/font/silka/silka-bold.eot') format('eot'),
+    url('../../assets/font/silka/silka-bold.ttf') format('ttf');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
 body {
-  @apply text-black;
+  @apply text-black font-silka;
 }
 
 .heading-xl {
+  font-weight: 700;
+  font-size: 5rem;
+  line-height: 5.5rem;
   @screen md {
+    font-size: 6rem;
+    line-height: 6.75rem;
   }
   @screen xl {
+    font-size: 7rem;
+    line-height: 9rem;
   }
 }
 
 .heading-l {
+  font-weight: 700;
+  font-size: 4rem;
   @screen md {
+    font-size: 5rem;
   }
   @screen xl {
+    font-size: 6rem;
   }
 }
 
 .heading {
+  font-weight: 600;
+  font-size: 2.5rem;
   @screen md {
+    font-size: 3rem;
   }
   @screen xl {
+    font-size: 3.5rem;
   }
 }
 
 .heading-s {
+  font-weight: 600;
+  font-size: 1.5rem;
   @screen md {
+    font-size: 2rem;
   }
   @screen xl {
+    font-size: 2.5rem;
   }
 }
 
 .heading-xs {
+  font-weight: 600;
+  font-size: 1.25rem;
   @screen md {
+    font-size: 1.5rem;
   }
   @screen xl {
-  }
-}
-
-.tagline {
-  @screen md {
-  }
-  @screen xl {
+    font-size: 2rem;
   }
 }
 
 .copy-l {
+  font-weight: 400;
+  font-size: 1rem;
   @screen md {
+    font-size: 1.25rem;
   }
   @screen xl {
+    font-size: 1.5rem;
   }
 }
 
 .copy {
+  font-weight: 400;
+  font-size: 0.9rem;
   @screen md {
+    font-size: 1rem;
   }
   @screen xl {
+    font-size: 1.125rem;
   }
 }
 
 .copy-s {
+  font-weight: 400;
+  font-size: 0.7rem;
   @screen md {
+    font-size: 0.8rem;
   }
   @screen xl {
+    font-size: 0.85rem;
   }
 }
 
@@ -106,11 +189,9 @@ body {
   h4 {
     @apply heading-s;
   }
-  h5 {
-    @apply heading-xs;
-  }
+  h5,
   h6 {
-    @apply tagline;
+    @apply heading-xs;
   }
 
   a {
