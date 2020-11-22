@@ -1,7 +1,6 @@
 import React, { useState, useEffect, useCallback, useRef } from 'react';
 import gsap from 'gsap';
 import classNames from 'classnames';
-import { isEmpty } from 'lodash';
 
 export default function Cursor() {
   const [position, setPosition] = useState({ x: 0, y: 0 });
@@ -11,6 +10,7 @@ export default function Cursor() {
 
   const cursorRef = useRef(null);
   const arrowRef = useRef(null);
+  const dotRef = useRef(null);
 
   const onMouseMove = (e) => {
     setPosition({ x: e.clientX, y: e.clientY });
@@ -35,17 +35,16 @@ export default function Cursor() {
     gsap
       .timeline()
       .to(arrowRef.current, {
-        opacity: 1,
         scale: 1,
         ease: 'ease-in-out',
         duration: 0.3,
       })
       .to(
-        cursorRef.current,
+        dotRef.current,
         {
-          backgroundColor: 'transparent',
+          scale: 0,
           ease: 'ease-in-out',
-          duration: 0.3,
+          duration: 0.15,
         },
         '-=1'
       )
@@ -55,15 +54,14 @@ export default function Cursor() {
     gsap
       .timeline()
       .to(arrowRef.current, {
-        opacity: 0,
         scale: 0,
         ease: 'ease-in-out',
-        duration: 0.3,
+        duration: 0.15,
       })
       .to(
-        cursorRef.current,
+        dotRef.current,
         {
-          backgroundColor: 'black',
+          scale: 1,
           ease: 'ease-in-out',
           duration: 0.3,
         },
@@ -116,7 +114,7 @@ export default function Cursor() {
 
   return (
     <div
-      className={classNames('site-cursor', {
+      className={classNames('site-cursor pointer-events-none', {
         'site-cursor--hidden': hidden,
         'site-cursor--hover': hover,
         'site-cursor--arrow': arrow,
@@ -128,9 +126,10 @@ export default function Cursor() {
       ref={cursorRef}
     >
       <span
-        ref={arrowRef}
-        className='absolute block site-cursor__icon left-1/2 top-1/2'
-      >
+        ref={dotRef}
+        className='block site-cursor__dot rounded-full pointer-events-none bg-gray-900'
+      ></span>
+      <span ref={arrowRef} className='block site-cursor__icon'>
         <svg
           xmlns='http://www.w3.org/2000/svg'
           fill='none'
