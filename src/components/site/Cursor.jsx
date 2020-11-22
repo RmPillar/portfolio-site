@@ -1,6 +1,6 @@
-import React, { useState, useEffect, useCallback, useRef } from 'react';
-import gsap from 'gsap';
+import React, { useState, useEffect, useMemo } from 'react';
 import classNames from 'classnames';
+import { initEvents, destroyEvents } from '../../utils/utils';
 
 export default function Cursor() {
   const [position, setPosition] = useState({ x: 0, y: 0 });
@@ -8,109 +8,61 @@ export default function Cursor() {
   const [hover, setHover] = useState(false);
   const [arrow, setArrow] = useState(false);
 
-  const cursorRef = useRef(null);
-  const arrowRef = useRef(null);
-  const dotRef = useRef(null);
-
   const onMouseMove = (e) => {
     setPosition({ x: e.clientX, y: e.clientY });
   };
-
   const onMouseLeave = () => {
     setHidden(true);
   };
-
   const onMouseEnter = () => {
     setHidden(false);
   };
-
   const onMouseHover = () => {
     setHover(true);
   };
-  const onMouseHoverOut = () => {
+  const onMouseHoverLeave = () => {
     setHover(false);
   };
-
   const onMouseArrow = () => {
-    gsap
-      .timeline()
-      .to(arrowRef.current, {
-        scale: 1,
-        ease: 'ease-in-out',
-        duration: 0.3,
-      })
-      .to(
-        dotRef.current,
-        {
-          scale: 0,
-          ease: 'ease-in-out',
-          duration: 0.15,
-        },
-        '-=1'
-      )
-      .play();
+    setArrow(true);
   };
-  const onMouseArrowOut = () => {
-    gsap
-      .timeline()
-      .to(arrowRef.current, {
-        scale: 0,
-        ease: 'ease-in-out',
-        duration: 0.15,
-      })
-      .to(
-        dotRef.current,
-        {
-          scale: 1,
-          ease: 'ease-in-out',
-          duration: 0.3,
-        },
-        '-=1'
-      )
-      .play();
+  const onMouseArrowLeave = () => {
+    setArrow(false);
   };
 
-  const addEventListeners = useCallback(() => {
-    document.addEventListener('mousemove', onMouseMove);
-    document.addEventListener('mouseenter', onMouseEnter);
-    document.addEventListener('mouseleave', onMouseLeave);
-
-    Array.from(document.getElementsByClassName('cursor-trigger')).forEach(
-      (el) => {
-        el.addEventListener('mouseenter', onMouseHover);
-        el.addEventListener('mouseleave', onMouseHoverOut);
-      }
-    );
-    Array.from(
-      document.getElementsByClassName('cursor-trigger--arrow')
-    ).forEach((el) => {
-      el.addEventListener('mouseenter', onMouseArrow);
-      el.addEventListener('mouseleave', onMouseArrowOut);
-    });
-  }, []);
-
-  const removeEventListeners = useCallback(() => {
-    document.removeEventListener('mousemove', onMouseMove);
-    document.removeEventListener('mouseenter', onMouseEnter);
-    document.removeEventListener('mouseleave', onMouseLeave);
-    Array.from(document.getElementsByClassName('cursor-trigger')).forEach(
-      (el) => {
-        el.removeEventListener('mouseenter', onMouseHover);
-        el.removeEventListener('mouseleave', onMouseHoverOut);
-      }
-    );
-    Array.from(
-      document.getElementsByClassName('cursor-trigger--arrow')
-    ).forEach((el) => {
-      el.removeEventListener('mouseenter', onMouseArrow);
-      el.removeEventListener('mouseleave', onMouseArrowOut);
-    });
-  }, []);
+  const events = useMemo(
+    () => [
+      { target: null, event: 'mousemove', callBack: onMouseMove },
+      { target: null, event: 'mouseenter', callBack: onMouseEnter },
+      { target: null, event: 'mouseleave', callBack: onMouseLeave },
+      {
+        target: document.getElementsByClassName('cursor-trigger'),
+        event: 'mouseenter',
+        callBack: onMouseHover,
+      },
+      {
+        target: document.getElementsByClassName('cursor-trigger'),
+        event: 'mouseleave',
+        callBack: onMouseHoverLeave,
+      },
+      {
+        target: document.getElementsByClassName('cursor-trigger--arrow'),
+        event: 'mouseenter',
+        callBack: onMouseArrow,
+      },
+      {
+        target: document.getElementsByClassName('cursor-trigger--arrow'),
+        event: 'mouseleave',
+        callBack: onMouseArrowLeave,
+      },
+    ],
+    []
+  );
 
   useEffect(() => {
-    addEventListeners();
-    return () => removeEventListeners();
-  }, [addEventListeners, removeEventListeners]);
+    initEvents(events);
+    return () => destroyEvents(events);
+  }, [events]);
 
   return (
     <div
@@ -123,13 +75,9 @@ export default function Cursor() {
         left: `${position.x}px`,
         top: `${position.y}px`,
       }}
-      ref={cursorRef}
     >
-      <span
-        ref={dotRef}
-        className='block site-cursor__dot rounded-full pointer-events-none bg-gray-900'
-      ></span>
-      <span ref={arrowRef} className='block site-cursor__icon'>
+      <span className='block site-cursor__dot rounded-full pointer-events-none bg-gray-900'></span>
+      <span className='block site-cursor__arrow'>
         <svg
           xmlns='http://www.w3.org/2000/svg'
           fill='none'
