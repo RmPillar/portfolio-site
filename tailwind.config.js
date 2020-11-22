@@ -105,6 +105,9 @@ module.exports = {
           '"Noto Color Emoji"',
         ],
       },
+      inset: {
+        '1/2': '50%',
+      },
     },
   },
   variants: {},

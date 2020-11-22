@@ -5,6 +5,8 @@
 @import './animations';
 @import './utilities';
 
+@import 'components/site/cursor';
+
 @import 'tailwindcss/components';
 
 @import 'tailwindcss/utilities';
