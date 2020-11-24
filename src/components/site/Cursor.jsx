@@ -13,17 +13,14 @@ export default function Cursor() {
   const toggleMouseVisibility = useCallback(() => {
     if (isNull(cursor)) setCursor('hidden');
     else setCursor(null);
-    console.log(cursor);
   }, [cursor]);
   const toggleMouseHover = useCallback(() => {
     if (isNull(cursor)) setCursor('hover');
     else setCursor(null);
-    console.log(cursor);
   }, [cursor]);
   const toggleMouseArrow = useCallback(() => {
     if (isNull(cursor)) setCursor('arrow');
     else setCursor(null);
-    console.log(cursor);
   }, [cursor]);
 
   const events = useMemo(
