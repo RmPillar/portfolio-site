@@ -1,62 +1,55 @@
-import React, { useState, useEffect, useMemo } from 'react';
+import React, { useState, useEffect, useMemo, useCallback } from 'react';
 import classNames from 'classnames';
 import { initEvents, destroyEvents } from '../../utils/utils';
+import { isNull } from 'lodash';
 
 export default function Cursor() {
   const [position, setPosition] = useState({ x: 0, y: 0 });
-  const [hidden, setHidden] = useState(false);
-  const [hover, setHover] = useState(false);
-  const [arrow, setArrow] = useState(false);
+  const [cursor, setCursor] = useState(null);
 
   const onMouseMove = (e) => {
     setPosition({ x: e.clientX, y: e.clientY });
   };
-  const onMouseLeave = () => {
-    setHidden(true);
-  };
-  const onMouseEnter = () => {
-    setHidden(false);
-  };
-  const onMouseHover = () => {
-    setHover(true);
-  };
-  const onMouseHoverLeave = () => {
-    setHover(false);
-  };
-  const onMouseArrow = () => {
-    setArrow(true);
-  };
-  const onMouseArrowLeave = () => {
-    setArrow(false);
-  };
+  const toggleMouseVisibility = useCallback(() => {
+    if (isNull(cursor)) setCursor('hidden');
+    else setCursor(null);
+  }, [cursor]);
+  const toggleMouseHover = useCallback(() => {
+    if (isNull(cursor)) setCursor('hover');
+    else setCursor(null);
+  }, [cursor]);
+  const toggleMouseArrow = useCallback(() => {
+    if (isNull(cursor)) setCursor('arrow');
+    else setCursor(null);
+  }, [cursor]);
 
   const events = useMemo(
     () => [
       { target: null, event: 'mousemove', callBack: onMouseMove },
-      { target: null, event: 'mouseenter', callBack: onMouseEnter },
-      { target: null, event: 'mouseleave', callBack: onMouseLeave },
+      { target: null, event: 'mouseenter', callBack: toggleMouseVisibility },
+      { target: null, event: 'mouseleave', callBack: toggleMouseVisibility },
       {
         target: document.getElementsByClassName('cursor-trigger'),
         event: 'mouseenter',
-        callBack: onMouseHover,
+        callBack: toggleMouseHover,
       },
       {
         target: document.getElementsByClassName('cursor-trigger'),
         event: 'mouseleave',
-        callBack: onMouseHoverLeave,
+        callBack: toggleMouseHover,
       },
       {
         target: document.getElementsByClassName('cursor-trigger--arrow'),
         event: 'mouseenter',
-        callBack: onMouseArrow,
+        callBack: toggleMouseArrow,
       },
       {
         target: document.getElementsByClassName('cursor-trigger--arrow'),
         event: 'mouseleave',
-        callBack: onMouseArrowLeave,
+        callBack: toggleMouseArrow,
       },
     ],
-    []
+    [toggleMouseVisibility, toggleMouseHover, toggleMouseArrow]
   );
 
   useEffect(() => {
@@ -66,10 +59,10 @@ export default function Cursor() {
 
   return (
     <div
-      className={classNames('site-cursor pointer-events-none', {
-        'site-cursor--hidden': hidden,
-        'site-cursor--hover': hover,
-        'site-cursor--arrow': arrow,
+      className={classNames('site-cursor pointer-events-none xl-max:hidden', {
+        'site-cursor--hidden': cursor === 'hidden',
+        'site-cursor--hover': cursor === 'hover',
+        'site-cursor--arrow': cursor === 'arrow',
       })}
       style={{
         left: `${position.x}px`,

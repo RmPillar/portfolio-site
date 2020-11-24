@@ -30,6 +30,7 @@
   min-width: 150px;
   transform: translate(-50%, -50%) scale(0);
   mix-blend-mode: difference;
+  cursor: pointer;
   transition: top 50ms ease-in-out, left 50ms ease-in-out,
     transform 150ms ease-in-out, filter 150ms ease-in-out;
 }
