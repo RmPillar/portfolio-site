@@ -5,7 +5,7 @@ import { isNull } from 'lodash';
 
 export default function Cursor() {
   const [position, setPosition] = useState({ x: 0, y: 0 });
-  const [cursor, setCursor] = useState(null);
+  const [cursor, setCursor] = useState('');
 
   const onMouseMove = (e) => {
     setPosition({ x: e.clientX, y: e.clientY });
@@ -13,14 +13,17 @@ export default function Cursor() {
   const toggleMouseVisibility = useCallback(() => {
     if (isNull(cursor)) setCursor('hidden');
     else setCursor(null);
+    console.log(cursor);
   }, [cursor]);
   const toggleMouseHover = useCallback(() => {
     if (isNull(cursor)) setCursor('hover');
     else setCursor(null);
+    console.log(cursor);
   }, [cursor]);
   const toggleMouseArrow = useCallback(() => {
     if (isNull(cursor)) setCursor('arrow');
     else setCursor(null);
+    console.log(cursor);
   }, [cursor]);
 
   const events = useMemo(

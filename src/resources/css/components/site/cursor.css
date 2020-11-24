@@ -2,6 +2,7 @@
   @apply fixed;
   width: 20px;
   height: 20px;
+  z-index: 9999;
   &--hidden {
     @apply opacity-0;
   }
@@ -19,7 +20,6 @@
   width: 20px;
   height: 20px;
   transform: translate(-50%, -50%) scale(1);
-  z-index: 9999;
 
   transition: top 50ms ease-in-out, left 50ms ease-in-out,
     transform 150ms ease-in-out, filter 150ms ease-in-out;
