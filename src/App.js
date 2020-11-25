@@ -2,6 +2,7 @@ import React, { useEffect } from 'react';
 
 import Cursor from './components/site/Cursor';
 import locomotiveScroll from 'locomotive-scroll';
+import BtnBlock from './components/global/BtnBlock';
 
 function App() {
   const scrollRef = React.createRef();
@@ -23,22 +24,15 @@ function App() {
           data-scroll-section
           className='h-screen bg-red-500 cursor-trigger--arrow'
         >
-          <h1
-            className='heading-xl mb-10'
-            data-scroll
-            data-scroll-speed='3'
-            data-scroll-position='bottom'
-          >
-            Heading One
-          </h1>
-          <h2
-            className='heading-xl cursor-trigger'
-            data-scroll
-            data-scroll-speed='3'
-            data-scroll-position='bottom'
-          >
-            Heading Two
-          </h2>
+          <div className='container pt-20'>
+            <BtnBlock
+              data-scroll
+              data-scroll-speed='3'
+              data-scroll-position='bottom'
+              label='This is a button'
+              url='/'
+            />
+          </div>
         </div>
 
         <div data-scroll-section className='h-screen cursor-trigger'></div>

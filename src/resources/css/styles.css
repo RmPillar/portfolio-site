@@ -9,6 +9,8 @@
 
 @import 'components/site/cursor';
 
+@import 'components/btn/btn';
+
 @import 'tailwindcss/components';
 
 @import 'tailwindcss/utilities';
