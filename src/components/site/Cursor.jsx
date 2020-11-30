@@ -10,11 +10,8 @@ export default function Cursor() {
   const [hidden, setHidden] = useState(false);
   const [prev, setPrev] = useState(null);
 
-  const [props, set, stop] = useSpring(() => ({ top: 0, left: 0 }));
+  const [props, set] = useSpring(() => ({ top: 0, left: 0 }));
 
-  const onMouseMove = (e) => {
-    set({ top: e.clientY, left: e.clientX });
-  };
   const onMouseOut = useCallback(() => {
     setHidden(true);
   }, []);
@@ -45,7 +42,11 @@ export default function Cursor() {
 
   const events = useMemo(
     () => [
-      { target: null, event: 'mousemove', callBack: onMouseMove },
+      {
+        target: null,
+        event: 'mousemove',
+        callBack: (e) => set({ top: e.clientY, left: e.clientX }),
+      },
       { target: null, event: 'mouseenter', callBack: onMouseIn },
       { target: null, event: 'mouseleave', callBack: onMouseOut },
       {
@@ -76,6 +77,7 @@ export default function Cursor() {
       onMouseArrow,
       onMouseArrowOut,
       onMouseOut,
+      set,
     ]
   );
 
