@@ -21,8 +21,7 @@
   height: 30px;
   transform: translate(-50%, -50%) scale(1);
 
-  transition: top 50ms ease-in-out, left 50ms ease-in-out,
-    transform 150ms ease-in-out, filter 150ms ease-in-out;
+  transition: transform 300ms ease-in-out, border-color 300ms ease-in-out;
 }
 
 .site-cursor__arrow {
@@ -38,7 +37,6 @@
 .site-cursor--hover {
   .site-cursor__dot {
     transform: translate(-50%, -50%) scale(1.5);
-    filter: invert(1);
-    @apply opacity-75;
+    @apply border-indigo-600;
   }
 }

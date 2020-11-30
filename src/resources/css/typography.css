@@ -148,6 +148,18 @@ body {
   }
 }
 
+.tagline {
+  @apply uppercase font-ibmPlexMono tracking-wide;
+  font-weight: 400;
+  font-size: 0.9rem;
+  @screen md {
+    font-size: 1rem;
+  }
+  @screen xl {
+    font-size: 1.125rem;
+  }
+}
+
 .rich-content {
   @apply w-full;
 

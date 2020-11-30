@@ -1,10 +1,10 @@
 import React, { useEffect } from 'react';
 import { BrowserRouter as Router } from 'react-router-dom';
+import locomotiveScroll from 'locomotive-scroll';
 
 import Routes from './components/site/Routes';
+import Header from './components/site/Header';
 import Cursor from './components/site/Cursor';
-
-import locomotiveScroll from 'locomotive-scroll';
 
 function App() {
   const scrollRef = React.createRef();
@@ -19,11 +19,12 @@ function App() {
   return (
     <div className='App'>
       <Cursor />
-      <div ref={scrollRef}>
-        <Router>
+      <Router>
+        <Header />
+        <div ref={scrollRef}>
           <Routes />
-        </Router>
-      </div>
+        </div>
+      </Router>
     </div>
   );
 }
