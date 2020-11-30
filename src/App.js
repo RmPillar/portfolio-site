@@ -1,8 +1,10 @@
 import React, { useEffect } from 'react';
+import { BrowserRouter as Router } from 'react-router-dom';
 
+import Routes from './components/site/Routes';
 import Cursor from './components/site/Cursor';
+
 import locomotiveScroll from 'locomotive-scroll';
-import BtnBlock from './components/global/BtnBlock';
 
 function App() {
   const scrollRef = React.createRef();
@@ -17,25 +19,10 @@ function App() {
   return (
     <div className='App'>
       <Cursor />
-      <div data-scroll-container className='scroll' ref={scrollRef}>
-        <div data-scroll-section className='h-screen'></div>
-
-        <div
-          data-scroll-section
-          className='h-screen bg-red-500 cursor-trigger--arrow'
-        >
-          <div className='container pt-20'>
-            <BtnBlock
-              data-scroll
-              data-scroll-speed='3'
-              data-scroll-position='bottom'
-              label='This is a button'
-              url='/'
-            />
-          </div>
-        </div>
-
-        <div data-scroll-section className='h-screen cursor-trigger'></div>
+      <div ref={scrollRef}>
+        <Router>
+          <Routes />
+        </Router>
       </div>
     </div>
   );
