@@ -2,15 +2,18 @@ import React, { useState, useEffect, useMemo, useCallback } from 'react';
 import classNames from 'classnames';
 import { initEvents, destroyEvents } from '../../utils/utils';
 
+import { useSpring, animated } from 'react-spring';
+
 export default function Cursor() {
-  const [position, setPosition] = useState({ x: 0, y: 0 });
   const [arrow, setArrow] = useState(false);
   const [hover, setHover] = useState(false);
   const [hidden, setHidden] = useState(false);
   const [prev, setPrev] = useState(null);
 
+  const [props, set, stop] = useSpring(() => ({ top: 0, left: 0 }));
+
   const onMouseMove = (e) => {
-    setPosition({ x: e.clientX, y: e.clientY });
+    set({ top: e.clientY, left: e.clientX });
   };
   const onMouseOut = useCallback(() => {
     setHidden(true);
@@ -82,33 +85,24 @@ export default function Cursor() {
   }, [events]);
 
   return (
-    <div
+    <animated.div
       className={classNames('site-cursor pointer-events-none xl-max:hidden', {
         'site-cursor--hidden': hidden,
         'site-cursor--hover': hover,
         'site-cursor--arrow': arrow,
       })}
-      style={{
-        left: `${position.x}px`,
-        top: `${position.y}px`,
-      }}
+      style={props}
     >
-      <span className='block site-cursor__dot rounded-full pointer-events-none bg-gray-900 relative'></span>
+      <span className='site-cursor__dot rounded-full pointer-events-none border-2 border-gray-900 relative flex items-center justify-center'></span>
       <span className='block site-cursor__arrow'>
         <svg
+          viewBox='0 0 482.239 482.239'
           xmlns='http://www.w3.org/2000/svg'
-          fill='none'
-          viewBox='0 0 24 24'
           stroke='currentColor'
         >
-          <path
-            strokeLinecap='round'
-            strokeLinejoin='round'
-            strokeWidth={2}
-            d='M19 14l-7 7m0 0l-7-7m7 7V3'
-          />
+          <path d='M206.812 34.446L0 241.119l206.743 206.674 24.353-24.284L65.929 258.342h416.31v-34.445H65.929L231.165 58.661z' />
         </svg>
       </span>
-    </div>
+    </animated.div>
   );
 }

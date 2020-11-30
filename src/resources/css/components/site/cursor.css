@@ -8,7 +8,7 @@
   }
   &--arrow {
     .site-cursor__arrow {
-      transform: translate(-50%, -50%) scale(1);
+      transform: translate(-50%, -50%) scale(1) rotate(-90deg);
     }
     .site-cursor__dot {
       transform: translate(-50%, -50%) scale(0);
@@ -17,8 +17,8 @@
 }
 
 .site-cursor__dot {
-  width: 20px;
-  height: 20px;
+  width: 30px;
+  height: 30px;
   transform: translate(-50%, -50%) scale(1);
 
   transition: top 50ms ease-in-out, left 50ms ease-in-out,
@@ -28,7 +28,7 @@
 .site-cursor__arrow {
   width: 150px;
   min-width: 150px;
-  transform: translate(-50%, -50%) scale(0);
+  transform: translate(-50%, -50%) scale(0) rotate(-90deg);
   mix-blend-mode: difference;
   cursor: pointer;
   transition: top 50ms ease-in-out, left 50ms ease-in-out,
@@ -40,6 +40,5 @@
     transform: translate(-50%, -50%) scale(1.5);
     filter: invert(1);
     @apply opacity-75;
-    animation: grow 1000ms ease-in-out infinite;
   }
 }
