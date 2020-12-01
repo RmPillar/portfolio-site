@@ -1,0 +1,34 @@
+.btn--menu {
+  @apply relative flex items-center;
+  width: 40px;
+  min-width: 40px;
+  height: 13px;
+  min-height: 13px;
+}
+
+.btn--menu__inner {
+  width: 40px;
+  min-width: 40px;
+  position: absolute;
+
+  &:before,
+  &:after {
+    @apply transition-all duration-300 bg-gray-900;
+    width: 40px;
+    min-width: 40px;
+    height: 4px;
+    content: '';
+    overflow: hidden;
+    @apply absolute inset-x-0;
+  }
+}
+
+.btn--menu.active .btn--menu__inner:before {
+  transform: rotate(45deg);
+  @apply bg-white;
+}
+
+.btn--menu.active .btn--menu__inner:after {
+  transform: rotate(-45deg);
+  @apply bg-white;
+}
