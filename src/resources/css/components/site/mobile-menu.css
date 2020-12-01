@@ -1,0 +1,8 @@
+.site-mobileMenu__social {
+  min-width: 30px;
+  width: 30px;
+  @screen md {
+    min-width: 40px;
+    width: 40px;
+  }
+}

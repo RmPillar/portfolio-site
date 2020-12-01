@@ -2,6 +2,10 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import classNames from 'classnames';
 
+import { ReactComponent as Github } from '../../assets/svg/github.svg';
+import { ReactComponent as Instagram } from '../../assets/svg/instagram.svg';
+import { ReactComponent as Linkedin } from '../../assets/svg/linkedin.svg';
+
 export default function MobileMenu({ menuOpen }) {
   return (
     <section
@@ -14,7 +18,7 @@ export default function MobileMenu({ menuOpen }) {
       )}
       style={{ maxWidth: '500px' }}
     >
-      <div className='flex flex-col px-8 py-14'>
+      <div className='flex flex-col px-8 pt-14 pb-10'>
         <Link
           className='mr-auto cursor-trigger py-4 heading text-gray-200'
           to='/'
@@ -48,6 +52,34 @@ export default function MobileMenu({ menuOpen }) {
         >
           Contact
         </Link>
+        <div className='flex md-max:space-x-6 mt-4 items-end'>
+          <a
+            href='https://www.instagram.com/rmpillar/'
+            className='md:my-8 transition-transform duration-300 transform hover:scale-125 md:block'
+          >
+            <span className='block text-white site-mobileMenu__social'>
+              <Instagram />
+            </span>
+          </a>
+
+          <a
+            href='https://www.linkedin.com/in/robin-pillar-b5500888/'
+            className='md:my-8 transition-transform duration-300 transform hover:scale-125 md:block'
+          >
+            <span className='block text-white site-mobileMenu__social'>
+              <Linkedin />
+            </span>
+          </a>
+
+          <a
+            href='https://github.com/RmPillar'
+            className='md:my-8 transition-transform duration-300 transform hover:scale-125 md:block'
+          >
+            <span className='block text-white site-mobileMenu__social'>
+              <Github />
+            </span>
+          </a>
+        </div>
       </div>
     </section>
   );
