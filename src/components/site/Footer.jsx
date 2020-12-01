@@ -7,7 +7,7 @@ import { ReactComponent as Linkedin } from '../../assets/svg/linkedin.svg';
 
 export default function Footer() {
   return (
-    <section className='py-5 mt-auto site-footer bg-gray-900'>
+    <section className='py-5 mt-auto site-footer bg-gray-900 cursor-dark'>
       <div className='container'>
         <div className='mx-auto md:flex md:w-8/12 row'>
           <div className='text-center md:w-6/12 column md-max:mb-6'>

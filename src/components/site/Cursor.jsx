@@ -6,6 +6,7 @@ import { useSpring, animated } from 'react-spring';
 
 export default function Cursor() {
   const [arrow, setArrow] = useState(false);
+  const [dark, setDark] = useState(false);
   const [hover, setHover] = useState(false);
   const [hidden, setHidden] = useState(false);
   const [prev, setPrev] = useState(null);
@@ -17,6 +18,12 @@ export default function Cursor() {
   }, []);
   const onMouseIn = useCallback(() => {
     setHidden(false);
+  }, []);
+  const onMouseDark = useCallback(() => {
+    setDark(true);
+  }, []);
+  const onMouseDarkOut = useCallback(() => {
+    setDark(false);
   }, []);
   const onMouseHover = useCallback(() => {
     if (arrow) {
@@ -60,6 +67,16 @@ export default function Cursor() {
         callBack: onMouseHoverOut,
       },
       {
+        target: document.getElementsByClassName('cursor-dark'),
+        event: 'mouseenter',
+        callBack: onMouseDark,
+      },
+      {
+        target: document.getElementsByClassName('cursor-dark'),
+        event: 'mouseleave',
+        callBack: onMouseDarkOut,
+      },
+      {
         target: document.getElementsByClassName('cursor-trigger--arrow'),
         event: 'mouseenter',
         callBack: onMouseArrow,
@@ -90,6 +107,7 @@ export default function Cursor() {
     <animated.div
       className={classNames('site-cursor pointer-events-none xl-max:hidden', {
         'site-cursor--hidden': hidden,
+        'site-cursor--dark': dark,
         'site-cursor--hover': hover,
         'site-cursor--arrow': arrow,
       })}
