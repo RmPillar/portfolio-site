@@ -4,6 +4,12 @@
   min-width: 40px;
   height: 13px;
   min-height: 13px;
+  @screen md {
+    width: 60px;
+    min-width: 60px;
+    height: 13px;
+    min-height: 13px;
+  }
 }
 
 .btn--menu__inner {
@@ -11,11 +17,20 @@
   min-width: 40px;
   position: absolute;
 
+  @screen md {
+    width: 60px;
+    min-width: 60px;
+  }
+
   &:before,
   &:after {
     @apply transition-all duration-300 bg-gray-900;
     width: 40px;
     min-width: 40px;
+    @screen md {
+      width: 60px;
+      min-width: 60px;
+    }
     height: 4px;
     content: '';
     overflow: hidden;

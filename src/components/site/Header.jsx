@@ -28,7 +28,7 @@ export default function Header({ menuOpen, setMenuOpen }) {
           Contact
         </Link>
 
-        <div className='xl-max:py-6 z-10 relative'>
+        <div className='md-max:py-6 md:py-8 z-30 relative xl:hidden'>
           <BtnMenu active={menuOpen} setActive={setMenuOpen} />
         </div>
       </div>

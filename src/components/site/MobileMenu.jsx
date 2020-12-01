@@ -10,7 +10,7 @@ export default function MobileMenu({ menuOpen }) {
   return (
     <section
       className={classNames(
-        'site-mobileMenu xl:hidden fixed md-max:inset-0 md:inset-y-0 md:right-0 w-full bg-gray-900 transition-transform duration-500 ease-out transform',
+        'site-mobileMenu xl:hidden fixed md-max:inset-0 md:inset-y-0 md:right-0 w-full bg-gray-900 transition-transform duration-500 ease-out transform z-20 h-full',
         {
           'translate-x-0': menuOpen,
           'translate-x-full': !menuOpen,
