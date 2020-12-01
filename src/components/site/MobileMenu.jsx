@@ -52,7 +52,7 @@ export default function MobileMenu({ menuOpen }) {
         >
           Contact
         </Link>
-        <div className='flex md-max:space-x-6 mt-auto items-end'>
+        <div className='flex space-x-6 mt-auto items-end'>
           <a
             href='https://www.instagram.com/rmpillar/'
             className='md:my-8 transition-transform duration-300 transform hover:scale-125 md:block'
