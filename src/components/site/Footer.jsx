@@ -9,7 +9,7 @@ export default function Footer() {
   return (
     <section className='py-5 mt-auto site-footer bg-gray-900 cursor-dark'>
       <div className='container'>
-        <div className='mx-auto md:flex md:w-8/12 row'>
+        <div className='mx-auto md:flex md:w-9/12 space-x-1/12 row'>
           <div className='text-center md:w-6/12 column md-max:mb-6 flex flex-wrap items-center border-1 border-white p-4'>
             <Link
               className='block mb-2 text-white copy cursor-trigger w-6/12'
