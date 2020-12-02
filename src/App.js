@@ -21,7 +21,7 @@ function App() {
   });
 
   return (
-    <div className='App'>
+    <div className='App flex flex-col min-h-screen'>
       <Cursor />
       <Router>
         <Header menuOpen={menuOpen} setMenuOpen={setMenuOpen} />
