@@ -10,35 +10,33 @@ export default function Footer() {
     <section className='py-5 mt-auto site-footer bg-gray-900 cursor-dark'>
       <div className='container'>
         <div className='mx-auto md:flex md:w-8/12 row'>
-          <div className='text-center md:w-6/12 column md-max:mb-6'>
-            <h5 className='mb-2 text-white copy md-max:hidden'>Site Links</h5>
-
+          <div className='text-center md:w-6/12 column md-max:mb-6 flex flex-wrap items-center border-1 border-white p-4'>
             <Link
-              className='block mb-2 text-white transition-transform duration-300 transform copy cursor-trigger'
+              className='block mb-2 text-white copy cursor-trigger w-6/12'
               to='/'
             >
               Home
             </Link>
             <Link
-              className='block mb-2 text-white transition-transform duration-300 transform copy cursor-trigger'
+              className='block mb-2 text-white copy cursor-trigger w-6/12'
               to='/skills'
             >
               Skills
             </Link>
             <Link
-              className='block mb-2 text-white transition-transform duration-300 transform copy cursor-trigger'
+              className='block mb-2 text-white copy cursor-trigger w-6/12'
               to='/experience'
             >
               Experience
             </Link>
             <Link
-              className='block mb-2 text-white transition-transform duration-300 transform copy cursor-trigger'
+              className='block mb-2 text-white copy cursor-trigger w-6/12'
               to='/projects'
             >
               Projects
             </Link>
             <Link
-              className='block mb-2 text-white transition-transform duration-300 transform copy cursor-trigger'
+              className='block mb-2 text-white copy cursor-trigger w-6/12'
               to='/contact'
             >
               Contact
@@ -46,12 +44,10 @@ export default function Footer() {
           </div>
 
           <div className='text-center md:w-6/12 column'>
-            <h5 className='mb-2 text-white copy md-max:hidden'>Social</h5>
-
-            <div className='flex items-end justify-center'>
+            <div className='flex items-center justify-center border-1 border-white p-4 h-full'>
               <a
                 href='https://www.instagram.com/rmpillar/'
-                className='mx-2  transition-transform duration-300 transform cursor-trigger'
+                className='mx-2  cursor-trigger'
               >
                 <span className='block text-white site-footer__social'>
                   <Instagram />
@@ -60,7 +56,7 @@ export default function Footer() {
 
               <a
                 href='https://www.linkedin.com/in/robin-pillar-b5500888/'
-                className='mx-2 transition-transform duration-300 transform cursor-trigger'
+                className='mx-2 cursor-trigger'
               >
                 <span className='block text-white site-footer__social'>
                   <Linkedin />
@@ -69,7 +65,7 @@ export default function Footer() {
 
               <a
                 href='https://github.com/RmPillar'
-                className='mx-2 transition-transform duration-300 transform cursor-trigger'
+                className='mx-2 cursor-trigger'
               >
                 <span className='block text-white site-footer__social'>
                   <Github />

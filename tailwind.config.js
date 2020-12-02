@@ -88,6 +88,9 @@ module.exports = {
         '11/12': '91.66666667%',
         full: '100%',
       },
+      borderWidth: {
+        1: '1px',
+      },
       fontFamily: {
         silka: [
           'Silka',
