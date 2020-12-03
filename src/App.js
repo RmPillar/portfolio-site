@@ -1,6 +1,5 @@
-import React, { useEffect, useState } from 'react';
+import React, { useState } from 'react';
 import { BrowserRouter as Router } from 'react-router-dom';
-// import locomotiveScroll from 'locomotive-scroll';
 
 import Routes from './components/site/Routes';
 import Header from './components/site/Header';
@@ -8,32 +7,23 @@ import MobileMenu from './components/site/MobileMenu';
 import Footer from './components/site/Footer';
 import Cursor from './components/site/Cursor';
 import Overlay from './components/site/Overlay';
+import GlobalAnimations from './components/animations/GlobalAnimations';
 
 function App() {
   const [menuOpen, setMenuOpen] = useState(false);
-  // const scrollRef = React.createRef();
-
-  // useEffect(() => {
-  //   const scroll = new locomotiveScroll({
-  //     el: scrollRef.current,
-  //     smooth: true,
-  //   });
-  // });
 
   return (
     <div className='App flex flex-col min-h-screen'>
-      <Cursor />
-      <Router>
-        <Header menuOpen={menuOpen} setMenuOpen={setMenuOpen} />
-        <MobileMenu menuOpen={menuOpen} />
-        <Overlay menuOpen={menuOpen} setMenuOpen={setMenuOpen} />
-
-        <div>
+      <GlobalAnimations>
+        <Cursor />
+        <Router>
+          <Header menuOpen={menuOpen} setMenuOpen={setMenuOpen} />
+          <MobileMenu menuOpen={menuOpen} />
+          <Overlay menuOpen={menuOpen} setMenuOpen={setMenuOpen} />
           <Routes />
-        </div>
-
-        <Footer />
-      </Router>
+          <Footer />
+        </Router>
+      </GlobalAnimations>
     </div>
   );
 }

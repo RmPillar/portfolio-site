@@ -4,7 +4,7 @@ import BtnMenu from '../buttons/BtnMenu';
 
 export default function Header({ menuOpen, setMenuOpen }) {
   return (
-    <section className='site-header fixed top-0 inset-x-0 xl:bg-white z-30'>
+    <section className='site-header fixed top-0 inset-x-0 z-30'>
       <div className='flex xl-max:justify-end items-center px-4 space-x-4'>
         <Link
           className='xl:ml-auto cursor-trigger py-4 copy xl-max:hidden'
