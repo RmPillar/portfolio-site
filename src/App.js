@@ -7,14 +7,14 @@ import MobileMenu from './components/site/MobileMenu';
 import Footer from './components/site/Footer';
 import Cursor from './components/site/Cursor';
 import Overlay from './components/site/Overlay';
-import GlobalAnimations from './components/animations/GlobalAnimations';
+import GlobalAnimation from './components/animations/GlobalAnimation';
 
 function App() {
   const [menuOpen, setMenuOpen] = useState(false);
 
   return (
     <div className='App flex flex-col min-h-screen'>
-      <GlobalAnimations>
+      <GlobalAnimation>
         <Cursor />
         <Router>
           <Header menuOpen={menuOpen} setMenuOpen={setMenuOpen} />
@@ -23,7 +23,7 @@ function App() {
           <Routes />
           <Footer />
         </Router>
-      </GlobalAnimations>
+      </GlobalAnimation>
     </div>
   );
 }

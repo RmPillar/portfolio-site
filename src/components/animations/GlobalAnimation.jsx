@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react';
 import SmoothScroll from 'smooth-scroll';
 
-export default function GlobalAnimations({ children }) {
+export default function GlobalAnimation({ children }) {
   useEffect(() => {
     new SmoothScroll('a[href*="#"]', {
       speed: 1500,
