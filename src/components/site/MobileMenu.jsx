@@ -18,7 +18,7 @@ export default function MobileMenu({ menuOpen }) {
       )}
       style={{ maxWidth: '500px' }}
     >
-      <div className='flex flex-col px-8 pt-14 pb-10'>
+      <div className='flex flex-col px-8 pt-14 pb-10 h-full'>
         <Link
           className='mr-auto cursor-trigger py-4 heading text-gray-200'
           to='/'

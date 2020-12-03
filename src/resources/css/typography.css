@@ -56,6 +56,27 @@
 body {
   @apply text-black font-silka;
 }
+.heading-2xl {
+  font-weight: 700;
+  font-size: 5.5rem;
+  line-height: 5.5rem;
+  &--outline {
+    -webkit-text-fill-color: transparent;
+    -webkit-text-stroke-width: 2px;
+  }
+  @screen md {
+    font-size: 8rem;
+    line-height: 8rem;
+  }
+  @screen xl {
+    font-size: 9rem;
+    line-height: 9rem;
+  }
+  @screen 2xl {
+    font-size: 11rem;
+    line-height: 11rem;
+  }
+}
 
 .heading-xl {
   font-weight: 700;

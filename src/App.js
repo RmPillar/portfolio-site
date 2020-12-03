@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { BrowserRouter as Router } from 'react-router-dom';
-import locomotiveScroll from 'locomotive-scroll';
+// import locomotiveScroll from 'locomotive-scroll';
 
 import Routes from './components/site/Routes';
 import Header from './components/site/Header';
@@ -10,15 +10,15 @@ import Cursor from './components/site/Cursor';
 import Overlay from './components/site/Overlay';
 
 function App() {
-  const scrollRef = React.createRef();
   const [menuOpen, setMenuOpen] = useState(false);
+  // const scrollRef = React.createRef();
 
-  useEffect(() => {
-    const scroll = new locomotiveScroll({
-      el: scrollRef.current,
-      smooth: true,
-    });
-  });
+  // useEffect(() => {
+  //   const scroll = new locomotiveScroll({
+  //     el: scrollRef.current,
+  //     smooth: true,
+  //   });
+  // });
 
   return (
     <div className='App flex flex-col min-h-screen'>
@@ -28,7 +28,7 @@ function App() {
         <MobileMenu menuOpen={menuOpen} />
         <Overlay menuOpen={menuOpen} setMenuOpen={setMenuOpen} />
 
-        <div ref={scrollRef}>
+        <div>
           <Routes />
         </div>
 

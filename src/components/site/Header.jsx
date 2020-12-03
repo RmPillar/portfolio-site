@@ -4,12 +4,12 @@ import BtnMenu from '../buttons/BtnMenu';
 
 export default function Header({ menuOpen, setMenuOpen }) {
   return (
-    <section className='site-header'>
+    <section className='site-header absolute top-0 inset-x-0'>
       <div className='flex xl-max:justify-end items-center px-4 space-x-4'>
-        <Link className='mr-auto cursor-trigger py-4 copy xl-max:hidden' to='/'>
-          Robin Pillar
-        </Link>
-        <Link className='cursor-trigger py-4 copy xl-max:hidden' to='/about'>
+        <Link
+          className='xl:ml-auto cursor-trigger py-4 copy xl-max:hidden'
+          to='/about'
+        >
           About
         </Link>
         <Link className='cursor-trigger py-4 copy xl-max:hidden' to='/skills'>

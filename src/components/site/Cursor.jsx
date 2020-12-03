@@ -77,12 +77,12 @@ export default function Cursor() {
         callBack: onMouseDarkOut,
       },
       {
-        target: document.getElementsByClassName('cursor-trigger--arrow'),
+        target: document.getElementsByClassName('cursor-arrow'),
         event: 'mouseenter',
         callBack: onMouseArrow,
       },
       {
-        target: document.getElementsByClassName('cursor-trigger--arrow'),
+        target: document.getElementsByClassName('cursor-arrow'),
         event: 'mouseleave',
         callBack: onMouseArrowOut,
       },
@@ -91,6 +91,8 @@ export default function Cursor() {
       onMouseIn,
       onMouseHover,
       onMouseHoverOut,
+      onMouseDark,
+      onMouseDarkOut,
       onMouseArrow,
       onMouseArrowOut,
       onMouseOut,
@@ -113,12 +115,12 @@ export default function Cursor() {
       })}
       style={props}
     >
-      <span className='site-cursor__dot rounded-full pointer-events-none border-2 border-gray-900 relative flex items-center justify-center'></span>
-      <span className='block site-cursor__arrow'>
+      <span className='site-cursor__dot rounded-full pointer-events-none border-2 border-teal-500 relative flex items-center justify-center'></span>
+      <span className='block site-cursor__arrow text-indigo-600'>
         <svg
           viewBox='0 0 482.239 482.239'
           xmlns='http://www.w3.org/2000/svg'
-          stroke='currentColor'
+          fill='currentColor'
         >
           <path d='M206.812 34.446L0 241.119l206.743 206.674 24.353-24.284L65.929 258.342h416.31v-34.445H65.929L231.165 58.661z' />
         </svg>
