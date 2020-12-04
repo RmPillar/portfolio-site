@@ -7,7 +7,6 @@ import Page from './components/site/Page';
 import Footer from './components/site/Footer';
 import Cursor from './components/site/Cursor';
 import Overlay from './components/site/Overlay';
-import GlobalAnimation from './components/animations/GlobalAnimation';
 import Locomotive from './components/site/Locomotive';
 
 function App() {
@@ -17,7 +16,7 @@ function App() {
   return (
     <Locomotive scrollRef={scrollRef}>
       <div
-        className='App flex flex-col min-h-screen'
+        className='App flex flex-col min-h-screen bg-gray-200'
         ref={scrollRef}
         data-scroll-container
       >

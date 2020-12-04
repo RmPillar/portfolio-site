@@ -31,10 +31,10 @@ export default function Locomotive({ children, scrollRef }) {
 
   useEffect(() => {
     if (!isNull(scroll)) {
-      locomotive.scrollTo(scroll);
+      locomotive.scrollTo(scroll, { offset: -40 });
       dispatch(setScroll(null));
     }
-  }, [locomotive, scroll]);
+  }, [dispatch, locomotive, scroll]);
 
   return <div>{children}</div>;
 }
