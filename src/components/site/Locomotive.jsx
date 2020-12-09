@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 
 import { useSelector, useDispatch } from 'react-redux';
 import { setScroll } from '../../store/actions/app';
@@ -6,10 +6,11 @@ import { setScroll } from '../../store/actions/app';
 import LocomotiveScroll from 'locomotive-scroll';
 import { isNull } from 'lodash';
 
-export default function Locomotive({ children, scrollRef }) {
+export default function Locomotive({ children }) {
   const [locomotive, setLocomotive] = useState(null);
   const { scroll } = useSelector((state) => state.app);
   const dispatch = useDispatch();
+  const scrollRef = useRef();
 
   useEffect(() => {
     if (isNull(locomotive)) {
@@ -30,11 +31,16 @@ export default function Locomotive({ children, scrollRef }) {
   }, [locomotive, scrollRef]);
 
   useEffect(() => {
+    const duration = window.innerWidth > 1025 ? 1500 : 3000;
     if (!isNull(scroll)) {
-      locomotive.scrollTo(scroll, { offset: -40 });
-      dispatch(setScroll(null));
+      locomotive.scrollTo(scroll, {
+        offset: -40,
+        duration,
+        easing: [0.83, 0, 0.17, 1],
+        callback: () => dispatch(setScroll(null)),
+      });
     }
   }, [dispatch, locomotive, scroll]);
 
-  return <div>{children}</div>;
+  return <div ref={scrollRef}>{children}</div>;
 }

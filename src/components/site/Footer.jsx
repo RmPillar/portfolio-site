@@ -7,12 +7,9 @@ import { ReactComponent as Linkedin } from '../../assets/svg/linkedin.svg';
 
 export default function Footer() {
   return (
-    <section
-      className='py-5 mt-auto site-footer bg-gray-200'
-      data-scroll-section
-    >
+    <footer className='py-5 site-footer bg-gray-200' data-scroll-section>
       <div className='container'>
-        <div className='md:flex row'>
+        <div className='md:flex items-center row'>
           <Link
             className='block mb-2 text-gray-900 copy cursor-trigger column'
             to='/'
@@ -50,6 +47,6 @@ export default function Footer() {
           </div>
         </div>
       </div>
-    </section>
+    </footer>
   );
 }

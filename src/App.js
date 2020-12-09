@@ -11,24 +11,18 @@ import Locomotive from './components/site/Locomotive';
 
 function App() {
   const [menuOpen, setMenuOpen] = useState(false);
-  const scrollRef = useRef();
 
   return (
-    <Locomotive scrollRef={scrollRef}>
-      <div
-        className='App flex flex-col min-h-screen bg-gray-200'
-        ref={scrollRef}
-        data-scroll-container
-      >
+    <Locomotive>
+      <main className='App flex flex-col min-h-screen bg-gray-200'>
         <Cursor />
         <Router>
           <Header menuOpen={menuOpen} setMenuOpen={setMenuOpen} />
           <MobileMenu menuOpen={menuOpen} />
           <Overlay menuOpen={menuOpen} setMenuOpen={setMenuOpen} />
           <Page />
-          <Footer />
         </Router>
-      </div>
+      </main>
     </Locomotive>
   );
 }
