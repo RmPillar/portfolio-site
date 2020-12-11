@@ -5,11 +5,9 @@ import { initEvents, destroyEvents } from '../../utils/utils';
 import { useSpring, animated } from 'react-spring';
 
 export default function Cursor() {
-  const [arrow, setArrow] = useState(false);
   const [dark, setDark] = useState(false);
   const [hover, setHover] = useState(false);
   const [hidden, setHidden] = useState(false);
-  const [prev, setPrev] = useState(null);
 
   const [props, set] = useSpring(() => ({ top: 0, left: 0 }));
 
@@ -26,25 +24,11 @@ export default function Cursor() {
     setDark(false);
   }, []);
   const onMouseHover = useCallback(() => {
-    if (arrow) {
-      setPrev('arrow');
-    } else {
-      setPrev(null);
-    }
-
     setHover(true);
-    setArrow(false);
-  }, [arrow]);
+  }, []);
 
   const onMouseHoverOut = useCallback(() => {
     setHover(false);
-    if (prev === 'arrow') setArrow(true);
-  }, [prev]);
-  const onMouseArrow = useCallback(() => {
-    setArrow(true);
-  }, []);
-  const onMouseArrowOut = useCallback(() => {
-    setArrow(false);
   }, []);
 
   const events = useMemo(
@@ -76,16 +60,6 @@ export default function Cursor() {
         event: 'mouseleave',
         callBack: onMouseDarkOut,
       },
-      {
-        target: document.getElementsByClassName('cursor-arrow'),
-        event: 'mouseenter',
-        callBack: onMouseArrow,
-      },
-      {
-        target: document.getElementsByClassName('cursor-arrow'),
-        event: 'mouseleave',
-        callBack: onMouseArrowOut,
-      },
     ],
     [
       onMouseIn,
@@ -93,8 +67,6 @@ export default function Cursor() {
       onMouseHoverOut,
       onMouseDark,
       onMouseDarkOut,
-      onMouseArrow,
-      onMouseArrowOut,
       onMouseOut,
       set,
     ]
@@ -111,20 +83,10 @@ export default function Cursor() {
         'site-cursor--hidden': hidden,
         'site-cursor--dark': dark,
         'site-cursor--hover': hover,
-        'site-cursor--arrow': arrow,
       })}
       style={props}
     >
-      <span className='site-cursor__dot rounded-full pointer-events-none border-2 border-white relative flex items-center justify-center'></span>
-      <span className='block site-cursor__arrow text-white'>
-        <svg
-          viewBox='0 0 482.239 482.239'
-          xmlns='http://www.w3.org/2000/svg'
-          fill='currentColor'
-        >
-          <path d='M206.812 34.446L0 241.119l206.743 206.674 24.353-24.284L65.929 258.342h416.31v-34.445H65.929L231.165 58.661z' />
-        </svg>
-      </span>
+      <span className='site-cursor__dot rounded-full pointer-events-none border-2 border-white relative flex items-center justify-center transition-all duration-300 ease-in-out'></span>
     </animated.div>
   );
 }

@@ -7,7 +7,7 @@ import { setScroll } from '../../store/actions/app';
 import LocomotiveScroll from 'locomotive-scroll';
 import { isNull } from 'lodash';
 
-export default function Locomotive({ children }) {
+export default function Locomotive() {
   const [locomotive, setLocomotive] = useState(null);
   const { scroll } = useSelector((state) => state.app);
   const dispatch = useDispatch();
@@ -48,7 +48,10 @@ export default function Locomotive({ children }) {
   }, [dispatch, locomotive, scroll]);
 
   useEffect(() => {
-    if (!isNull(locomotive)) {
+    if (
+      !isNull(locomotive) &&
+      window.matchMedia(`(min-width: 1025px)`).matches
+    ) {
       locomotive.on('scroll', (obj) => {
         const keys = Object.keys(obj.currentElements);
         keys.forEach((key, idx) => {
