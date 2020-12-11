@@ -115,8 +115,8 @@ export default function Cursor() {
       })}
       style={props}
     >
-      <span className='site-cursor__dot rounded-full pointer-events-none border-2 border-teal-500 relative flex items-center justify-center'></span>
-      <span className='block site-cursor__arrow text-indigo-600'>
+      <span className='site-cursor__dot rounded-full pointer-events-none border-2 border-white relative flex items-center justify-center'></span>
+      <span className='block site-cursor__arrow text-white'>
         <svg
           viewBox='0 0 482.239 482.239'
           xmlns='http://www.w3.org/2000/svg'

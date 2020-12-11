@@ -91,6 +91,9 @@ module.exports = {
       borderWidth: {
         1: '1px',
       },
+      borderRadius: {
+        20: '20px',
+      },
       fontFamily: {
         silka: [
           'Silka',
@@ -128,6 +131,8 @@ module.exports = {
       },
     },
   },
-  variants: {},
+  variants: {
+    scale: ['responsive', 'hover'],
+  },
   plugins: [],
 };

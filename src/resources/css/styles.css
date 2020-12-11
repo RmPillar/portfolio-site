@@ -11,6 +11,8 @@
 @import 'components/site/mobile-menu';
 @import 'components/site/footer';
 
+@import 'components/home/page-card';
+
 @import 'components/btn/btn';
 
 @import 'tailwindcss/components';

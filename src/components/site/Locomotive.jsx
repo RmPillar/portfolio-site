@@ -1,4 +1,5 @@
 import React, { useState, useEffect, useRef } from 'react';
+import Routes from './Routes';
 
 import { useSelector, useDispatch } from 'react-redux';
 import { setScroll } from '../../store/actions/app';
@@ -12,12 +13,16 @@ export default function Locomotive({ children }) {
   const dispatch = useDispatch();
   const scrollRef = useRef();
 
+  const map = (x, a, b, c, d) => ((x - a) * (d - c)) / (b - a) + c;
+
   useEffect(() => {
     if (isNull(locomotive)) {
       setLocomotive(
         new LocomotiveScroll({
           el: scrollRef.current,
           smooth: true,
+          direction: 'horizontal',
+          multiplier: 0.6,
         })
       );
     }
@@ -42,5 +47,33 @@ export default function Locomotive({ children }) {
     }
   }, [dispatch, locomotive, scroll]);
 
-  return <div ref={scrollRef}>{children}</div>;
+  useEffect(() => {
+    if (!isNull(locomotive)) {
+      locomotive.on('scroll', (obj) => {
+        const keys = Object.keys(obj.currentElements);
+        keys.forEach((key, idx) => {
+          const element = obj.currentElements[key];
+          const classList = element.el.classList;
+          if (classList.contains('home-pageCard')) {
+            const progress = element.progress;
+
+            const translationVal =
+              progress > 0.6 ? map(progress, 0.6, 1, 5, 200) : 0;
+
+            const rotationVal =
+              progress > 0.6 ? map(progress, 0.6, 1, 0, -60) : 0;
+
+            element.el.style.transform = `translateY(${translationVal}%) rotate(${rotationVal}deg)`;
+          }
+        });
+      });
+      locomotive.update();
+    }
+  }, [locomotive, scrollRef]);
+
+  return (
+    <div ref={scrollRef}>
+      <Routes />
+    </div>
+  );
 }
