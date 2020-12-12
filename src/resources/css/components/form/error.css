@@ -1,0 +1,3 @@
+.form-error {
+  @apply ml-2 text-red-600 copy-s block mt-1;
+}

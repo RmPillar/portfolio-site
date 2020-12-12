@@ -1,0 +1,4 @@
+.form-textarea {
+  @apply bg-white rounded-10 px-5 py-4;
+  min-height: 150px;
+}

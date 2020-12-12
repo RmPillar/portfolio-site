@@ -31,7 +31,7 @@ export default function PageModal() {
   return (
     <section
       ref={pageRef}
-      className='home-pageModal fixed inset-0 bg-white transform scale-0 rounded-20 xl:m-8 z-30 cursor-dark'
+      className='home-pageModal fixed inset-0 bg-white transform scale-0 rounded-20 xl:m-8 z-30 cursor-dark p-4 overflow-scroll'
     >
       {page === '/about' && <About />}
       {page === '/projects' && <Projects />}

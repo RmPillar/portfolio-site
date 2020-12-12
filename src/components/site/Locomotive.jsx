@@ -69,7 +69,7 @@ export default function Locomotive() {
     if (!isNull(locomotive) && modal) {
       locomotive.stop();
     } else if (!isNull(locomotive)) locomotive.start();
-  }, [modal]);
+  }, [modal, locomotive]);
 
   return (
     <div ref={scrollRef}>

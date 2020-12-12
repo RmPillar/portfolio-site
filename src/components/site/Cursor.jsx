@@ -79,11 +79,14 @@ export default function Cursor() {
 
   return (
     <animated.div
-      className={classNames('site-cursor pointer-events-none xl-max:hidden', {
-        'site-cursor--hidden': hidden,
-        'site-cursor--dark': dark,
-        'site-cursor--hover': hover,
-      })}
+      className={classNames(
+        'site-cursor overflow-visible pointer-events-none xl-max:hidden',
+        {
+          'site-cursor--hidden': hidden,
+          'site-cursor--dark': dark,
+          'site-cursor--hover': hover,
+        }
+      )}
       style={props}
     >
       <span className='site-cursor__dot rounded-full pointer-events-none border-2 border-white relative flex items-center justify-center transition-all duration-300 ease-in-out'></span>

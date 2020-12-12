@@ -9,6 +9,7 @@ import { isNull } from 'lodash';
 import Intro from '../components/home/Intro';
 import PageList from '../components/home/PageList';
 import PageModal from '../components/home/PageModal';
+import Contact from '../components/home/Contact';
 
 export default function Home() {
   const { modal } = useSelector((state) => state.app);
@@ -43,10 +44,7 @@ export default function Home() {
     >
       <Intro />
       <PageList />
-      <div
-        data-scroll-section
-        className='w-screen h-screen bg-gradient-to-b xl:bg-gradient-to-tr from-indigo-600 to-indigo-400'
-      ></div>
+      <Contact />
 
       <PageModal />
 

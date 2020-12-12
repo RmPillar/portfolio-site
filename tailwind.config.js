@@ -92,6 +92,8 @@ module.exports = {
         1: '1px',
       },
       borderRadius: {
+        5: '5px',
+        10: '10px',
         20: '20px',
       },
       fontFamily: {

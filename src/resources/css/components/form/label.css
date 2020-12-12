@@ -1,0 +1,3 @@
+.form-label {
+  @apply copy text-white mb-1 ml-2;
+}

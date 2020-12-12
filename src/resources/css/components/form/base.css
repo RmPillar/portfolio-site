@@ -1,0 +1,19 @@
+input,
+select,
+textarea {
+  outline: none;
+  display: block;
+  appearance: none;
+  line-height: normal;
+  user-select: auto;
+  @apply transition-all duration-300 bg-transparent w-full appearance-none;
+
+  &::placeholder {
+    opacity: 1;
+  }
+
+  &:disabled,
+  &[aria-disabled='true'] {
+    cursor: not-allowed;
+  }
+}
