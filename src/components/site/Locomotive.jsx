@@ -1,10 +1,12 @@
 import React, { useState, useEffect, useRef } from 'react';
+
 import Routes from './Routes';
 
 import { useSelector, useDispatch } from 'react-redux';
 import { setScroll } from '../../store/actions/app';
 
 import LocomotiveScroll from 'locomotive-scroll';
+import gsap from 'gsap';
 import { isNull } from 'lodash';
 
 export default function Locomotive() {
@@ -66,7 +68,10 @@ export default function Locomotive() {
             const rotationVal =
               progress > 0.6 ? map(progress, 0.6, 1, 0, -60) : 0;
 
-            element.el.style.transform = `translateY(${translationVal}%) rotate(${rotationVal}deg)`;
+            gsap.to(element.el, {
+              y: `${translationVal}%`,
+              rotate: rotationVal,
+            });
           }
         });
       });

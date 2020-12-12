@@ -8,10 +8,10 @@ export default function PageList() {
       data-scroll-section
     >
       <div className='h-full flex md-max:flex-col xl-max:flex-wrap items-center justify-center md-max:space-y-10 xl:space-x-20 xl-max:row'>
-        <PageCard title='About' body='See Who I Am' to='/about' />
-        <PageCard title='Skills' body='See What I Can Do' to='/skills' />
-        <PageCard title='Work' body="See What I've Been Doing" to='/work' />
-        <PageCard title='Projects' body="See What I'm Doing" to='/projects' />
+        <PageCard title='About' body='Who I Am' to='/about' />
+        <PageCard title='Skills' body='What I Can Do' to='/skills' />
+        <PageCard title='Work' body="What I've Been Doing" to='/work' />
+        <PageCard title='Projects' body="What I'm Doing" to='/projects' />
       </div>
     </section>
   );
