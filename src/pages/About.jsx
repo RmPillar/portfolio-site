@@ -1,5 +1,9 @@
 import React from 'react';
 
 export default function About() {
-  return <div>ABOUT</div>;
+  return (
+    <section className='page-about'>
+      <h1 className='heading-xl'>About</h1>
+    </section>
+  );
 }

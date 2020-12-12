@@ -1,5 +1,3 @@
-import { isNull } from 'lodash';
-
 const initState = {
   scroll: null,
   page: null,

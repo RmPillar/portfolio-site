@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useRef } from 'react';
 
-import Routes from './Routes';
+import Home from '../../pages/Home';
 
 import { useSelector, useDispatch } from 'react-redux';
 import { setScroll } from '../../store/actions/app';
@@ -11,7 +11,7 @@ import { isNull } from 'lodash';
 
 export default function Locomotive() {
   const [locomotive, setLocomotive] = useState(null);
-  const { scroll } = useSelector((state) => state.app);
+  const { scroll, modal } = useSelector((state) => state.app);
   const dispatch = useDispatch();
   const scrollRef = useRef();
 
@@ -79,9 +79,15 @@ export default function Locomotive() {
     }
   }, [locomotive, scrollRef]);
 
+  useEffect(() => {
+    if (!isNull(locomotive) && modal) {
+      locomotive.stop();
+    } else if (!isNull(locomotive)) locomotive.start();
+  }, [modal]);
+
   return (
     <div ref={scrollRef}>
-      <Routes />
+      <Home />
     </div>
   );
 }
