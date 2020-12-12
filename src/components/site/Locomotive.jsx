@@ -2,8 +2,7 @@ import React, { useState, useEffect, useRef } from 'react';
 
 import Home from '../../pages/Home';
 
-import { useSelector, useDispatch } from 'react-redux';
-import { setScroll } from '../../store/actions/app';
+import { useSelector } from 'react-redux';
 
 import LocomotiveScroll from 'locomotive-scroll';
 import gsap from 'gsap';
@@ -11,8 +10,7 @@ import { isNull } from 'lodash';
 
 export default function Locomotive() {
   const [locomotive, setLocomotive] = useState(null);
-  const { scroll, modal } = useSelector((state) => state.app);
-  const dispatch = useDispatch();
+  const { modal } = useSelector((state) => state.app);
   const scrollRef = useRef();
 
   const map = (x, a, b, c, d) => ((x - a) * (d - c)) / (b - a) + c;
@@ -36,18 +34,6 @@ export default function Locomotive() {
       }
     };
   }, [locomotive, scrollRef]);
-
-  useEffect(() => {
-    const duration = window.innerWidth > 1025 ? 1500 : 3000;
-    if (!isNull(scroll)) {
-      locomotive.scrollTo(scroll, {
-        offset: -40,
-        duration,
-        easing: [0.83, 0, 0.17, 1],
-        callback: () => dispatch(setScroll(null)),
-      });
-    }
-  }, [dispatch, locomotive, scroll]);
 
   useEffect(() => {
     if (
