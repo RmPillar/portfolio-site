@@ -133,6 +133,9 @@ module.exports = {
       },
     },
   },
+  corePlugins: {
+    container: false,
+  },
   variants: {
     scale: ['responsive', 'hover'],
   },

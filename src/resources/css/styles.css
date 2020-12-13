@@ -11,6 +11,8 @@
 
 @import 'components/home/page-card';
 
+@import 'components/global/loader';
+
 @import 'components/btn/btn';
 @import 'components/form/form';
 

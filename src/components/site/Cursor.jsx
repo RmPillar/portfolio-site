@@ -1,15 +1,22 @@
-import React, { useState, useEffect, useMemo, useCallback } from 'react';
-import classNames from 'classnames';
-import { initEvents, destroyEvents } from '../../utils/utils';
+import React, {
+  useState,
+  useEffect,
+  useMemo,
+  useCallback,
+  useRef,
+} from 'react';
 
-import { useSpring, animated } from 'react-spring';
+import classNames from 'classnames';
+import gsap from 'gsap';
+
+import { initEvents, destroyEvents } from '../../utils/utils';
 
 export default function Cursor() {
   const [dark, setDark] = useState(false);
   const [hover, setHover] = useState(false);
   const [hidden, setHidden] = useState(false);
 
-  const [props, set] = useSpring(() => ({ top: 0, left: 0 }));
+  const cursorRef = useRef();
 
   const onMouseOut = useCallback(() => {
     setHidden(true);
@@ -36,7 +43,9 @@ export default function Cursor() {
       {
         target: null,
         event: 'mousemove',
-        callBack: (e) => set({ top: e.clientY, left: e.clientX }),
+        callBack: (e) => {
+          gsap.to(cursorRef.current, { y: e.clientY, x: e.clientX });
+        },
       },
       { target: null, event: 'mouseenter', callBack: onMouseIn },
       { target: null, event: 'mouseleave', callBack: onMouseOut },
@@ -68,7 +77,6 @@ export default function Cursor() {
       onMouseDark,
       onMouseDarkOut,
       onMouseOut,
-      set,
     ]
   );
 
@@ -78,7 +86,7 @@ export default function Cursor() {
   }, [events]);
 
   return (
-    <animated.div
+    <div
       className={classNames(
         'site-cursor overflow-visible pointer-events-none xl-max:hidden',
         {
@@ -87,9 +95,9 @@ export default function Cursor() {
           'site-cursor--hover': hover,
         }
       )}
-      style={props}
+      ref={cursorRef}
     >
-      <span className='site-cursor__dot rounded-full pointer-events-none border-2 border-white relative flex items-center justify-center transition-all duration-300 ease-in-out'></span>
-    </animated.div>
+      <span className='site-cursor__dot rounded-full pointer-events-none border-2 border-white relative flex items-center justify-center transition-all duration-500 ease-in-out'></span>
+    </div>
   );
 }
