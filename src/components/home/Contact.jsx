@@ -81,7 +81,7 @@ export default function Contact() {
               </div>
             </div>
 
-            <span className='block mb-4 xl:w-9/12'>
+            <span className='block mb-4'>
               <Textarea
                 label='Your Message'
                 placeholder='Your Message Here'

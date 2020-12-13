@@ -8,6 +8,7 @@
 @import './utilities';
 
 @import 'components/site/cursor';
+@import 'components/site/scrollbar';
 
 @import 'components/home/page-card';
 
