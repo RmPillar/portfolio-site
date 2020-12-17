@@ -15,6 +15,7 @@ export default function Cursor() {
   const [dark, setDark] = useState(false);
   const [hover, setHover] = useState(false);
   const [hidden, setHidden] = useState(false);
+  const [arrow, setArrow] = useState(false);
 
   const cursorRef = useRef();
 
@@ -33,9 +34,17 @@ export default function Cursor() {
   const onMouseHover = useCallback(() => {
     setHover(true);
   }, []);
-
   const onMouseHoverOut = useCallback(() => {
     setHover(false);
+  }, []);
+  const onMouseArrowUp = useCallback(() => {
+    setArrow(true);
+  }, []);
+  const onMouseArrowDown = useCallback(() => {
+    setArrow(true);
+  }, []);
+  const onMouseArrowOut = useCallback(() => {
+    setArrow(false);
   }, []);
 
   const events = useMemo(
@@ -69,6 +78,26 @@ export default function Cursor() {
         event: 'mouseleave',
         callBack: onMouseDarkOut,
       },
+      {
+        target: document.getElementsByClassName('cursor-arrowUp'),
+        event: 'mouseenter',
+        callBack: onMouseArrowUp,
+      },
+      {
+        target: document.getElementsByClassName('cursor-arrowUp'),
+        event: 'mouseleave',
+        callBack: onMouseArrowOut,
+      },
+      {
+        target: document.getElementsByClassName('cursor-arrowDown'),
+        event: 'mouseenter',
+        callBack: onMouseArrowDown,
+      },
+      {
+        target: document.getElementsByClassName('cursor-arrowDown'),
+        event: 'mouseleave',
+        callBack: onMouseArrowOut,
+      },
     ],
     [
       onMouseIn,
@@ -77,6 +106,9 @@ export default function Cursor() {
       onMouseDark,
       onMouseDarkOut,
       onMouseOut,
+      onMouseArrowUp,
+      onMouseArrowDown,
+      onMouseArrowOut,
     ]
   );
 
@@ -93,11 +125,27 @@ export default function Cursor() {
           'site-cursor--hidden': hidden,
           'site-cursor--dark': dark,
           'site-cursor--hover': hover,
+          'site-cursor--arrowUp': arrow,
+          // 'site-cursor--arrowDown': arrow,
         }
       )}
       ref={cursorRef}
     >
-      <span className='site-cursor__dot rounded-full pointer-events-none border-2 border-white relative flex items-center justify-center transition-all duration-500 ease-in-out'></span>
+      <span className='site-cursor__dot rounded-full pointer-events-none border-2 border-white relative flex items-center justify-center transition-all duration-500 ease-in-out'>
+        <span className='site-cursor__arrow'>
+          <svg
+            xmlns='http://www.w3.org/2000/svg'
+            viewBox='0 0 20 20'
+            fill='currentColor'
+          >
+            <path
+              fillRule='evenodd'
+              d='M5.293 7.707a1 1 0 010-1.414l4-4a1 1 0 011.414 0l4 4a1 1 0 01-1.414 1.414L11 5.414V17a1 1 0 11-2 0V5.414L6.707 7.707a1 1 0 01-1.414 0z'
+              clipRule='evenodd'
+            />
+          </svg>
+        </span>
+      </span>
     </div>
   );
 }

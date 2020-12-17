@@ -1,38 +1,52 @@
 import React, { useEffect, useRef } from 'react';
 
-import { useSelector } from 'react-redux';
+import { useSelector, useDispatch } from 'react-redux';
+import { setModal } from '../../store/actions/app';
 
 import About from '../../pages/About';
 import Projects from '../../pages/Projects';
 import Skills from '../../pages/Skills';
 import Work from '../../pages/Work';
 
+import { ReactComponent as Cross } from '../../assets/svg/cross.svg';
+
 import gsap from 'gsap';
 import { isNull } from 'lodash';
 
 export default function PageModal() {
   const { modal, page } = useSelector((state) => state.app);
+  const dispatch = useDispatch();
   const pageRef = useRef();
 
   useEffect(() => {
     if (modal && !isNull(pageRef)) {
-      gsap.to(pageRef.current, { scale: 1, duration: 0.4 });
+      gsap.to(pageRef.current, { scale: 1, duration: 0.3 });
       if (!window.matchMedia('(min-width:1025px)').matches)
         gsap.to(pageRef.current, {
           borderRadius: 0,
-          duration: 0.4,
-          delay: 0.4,
+          duration: 0.3,
+          delay: 0.3,
         });
     } else if (!modal && !isNull(pageRef)) {
-      gsap.to(pageRef.current, { scale: 0, duration: 0.4 });
+      gsap.to(pageRef.current, { scale: 0, duration: 0.3 });
     }
   }, [modal]);
+
+  const onClick = () => {
+    dispatch(setModal(false));
+  };
 
   return (
     <section
       ref={pageRef}
-      className='home-pageModal fixed inset-0 bg-white transform scale-0 rounded-20 xl:m-8 z-30 cursor-dark p-4 overflow-scroll'
+      className='home-pageModal fixed inset-0 bg-white transform scale-0 rounded-20 xl:m-8 z-30 cursor-dark p-4 overflow-hidden'
     >
+      <button
+        className='home-pageModal__button absolute top-0 left-0 rounded-full mt-4 ml-4 h-10 min-h-10 w-10 min-w-10 text-white bg-gradient-to-tr from-indigo-600 to-indigo-400 cursor-trigger'
+        onClick={onClick}
+      >
+        <Cross />
+      </button>
       {page === '/about' && <About />}
       {page === '/projects' && <Projects />}
       {page === '/skills' && <Skills />}

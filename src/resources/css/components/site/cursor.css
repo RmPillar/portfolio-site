@@ -19,6 +19,12 @@
   transform: translate(-50%, -50%) scale(1);
 }
 
+.site-cursor__arrow {
+  @apply is-hidden;
+  width: 20px;
+  min-width: 20px;
+}
+
 .site-cursor--hover {
   .site-cursor__dot {
     transform: translate(-50%, -50%) scale(1.5);
@@ -27,6 +33,11 @@
   &.site-cursor--dark {
     .site-cursor__dot {
       @apply bg-gray-900 opacity-50;
+    }
+  }
+  &.site-cursor--arrowUp {
+    .site-cursor__arrow {
+      @apply is-visible;
     }
   }
 }
