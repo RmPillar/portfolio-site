@@ -4,7 +4,7 @@ export default function Intro() {
   return (
     <section
       data-scroll-section
-      className='global-pageIntro h-screen w-screen bg-gradient-to-t xl:bg-gradient-to-tr from-indigo-600 to-indigo-400'
+      className='global-pageIntro h-screen w-screen bg-gradient-to-t xl:bg-gradient-to-tr from-indigo-800 to-indigo-400'
     >
       <div className='container flex flex-col justify-center h-full'>
         <h1

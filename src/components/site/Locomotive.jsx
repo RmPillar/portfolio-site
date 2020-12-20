@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useRef } from 'react';
 
-import Home from '../../pages/Home';
+import Routes from './Routes';
 
 import { useSelector } from 'react-redux';
 
@@ -73,7 +73,7 @@ export default function Locomotive() {
 
   return (
     <div ref={scrollRef}>
-      <Home />
+      <Routes />
     </div>
   );
 }

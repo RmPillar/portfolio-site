@@ -13,9 +13,8 @@ export default function Layout({ content }) {
         return <Content data={item} key={index} />;
       case 'slider':
         return <Slider data={item} key={index} />;
-
       default:
-        break;
+        return <></>;
     }
   });
   return (
