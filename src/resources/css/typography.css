@@ -185,7 +185,7 @@ body {
 }
 
 .rich-content {
-  @apply w-full;
+  @apply w-full whitespace-normal;
 
   > * + * {
     @apply mt-4;

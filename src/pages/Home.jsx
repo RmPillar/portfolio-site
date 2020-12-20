@@ -7,8 +7,8 @@ import gsap from 'gsap';
 import { isNull } from 'lodash';
 
 import Intro from '../components/home/Intro';
-import PageList from '../components/home/PageList';
-import PageModal from '../components/home/PageModal';
+import List from '../components/home/List';
+import Modal from '../components/home/Modal';
 import Contact from '../components/home/Contact';
 
 export default function Home() {
@@ -43,10 +43,10 @@ export default function Home() {
       data-scroll-container
     >
       <Intro />
-      <PageList />
+      <List />
       <Contact />
 
-      <PageModal />
+      <Modal />
 
       <div
         ref={overlayRef}

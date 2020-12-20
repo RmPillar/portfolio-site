@@ -49,10 +49,10 @@ export default function Locomotive() {
             const progress = element.progress;
 
             const translationVal =
-              progress > 0.8 ? map(progress, 0.8, 1, 5, 200) : 0;
+              progress > 0.75 ? map(progress, 0.75, 1, 5, 200) : 0;
 
             const rotationVal =
-              progress > 0.8 ? map(progress, 0.8, 1, 0, -60) : 0;
+              progress > 0.75 ? map(progress, 0.75, 1, 0, -60) : 0;
 
             gsap.to(element.el, {
               y: `${translationVal}%`,
