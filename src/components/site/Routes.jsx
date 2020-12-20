@@ -2,11 +2,8 @@ import React from 'react';
 
 import { Switch, Route } from 'react-router-dom';
 
-import About from '../../pages/About';
+import FlexiblePage from '../../pages/FlexiblePage';
 import Home from '../../pages/Home';
-import Work from '../../pages/Work';
-import Skills from '../../pages/Skills';
-import Projects from '../../pages/Projects';
 
 import data from '../../assets/data';
 
@@ -17,16 +14,19 @@ export default function Routes() {
         <Home />
       </Route>
       <Route path='/about'>
-        <About data={data.about} />
+        <FlexiblePage data={data.about} />
       </Route>
       <Route path='/skills'>
-        <Skills data={data.skills} />
+        <FlexiblePage data={data.skills} />
+      </Route>
+      <Route path='/education'>
+        <FlexiblePage data={data.education} />
       </Route>
       <Route path='/work'>
-        <Work data={data.work} />
+        <FlexiblePage data={data.work} />
       </Route>
       <Route path='/projects'>
-        <Projects data={data.projects} />
+        <FlexiblePage data={data.projects} />
       </Route>
     </Switch>
   );

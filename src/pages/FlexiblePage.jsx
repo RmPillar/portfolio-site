@@ -5,9 +5,9 @@ import Layout from '../components/global/Layout';
 
 import { isEmpty } from 'lodash';
 
-export default function About({ data }) {
+export default function FlexiblePage({ data }) {
   return (
-    <section className='page-about h-full overflow-hidden bg-gray-100'>
+    <section className='page-flexible h-full overflow-hidden bg-gray-100'>
       {!isEmpty(data.hero) && <Hero data={data.hero} />}
       <div
         className='rounded-t-full h-30 w-full bg-gradient-to-br from-indigo-500 to-indigo-600'

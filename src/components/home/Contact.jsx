@@ -40,7 +40,7 @@ export default function Contact() {
   return (
     <section
       data-scroll-section
-      className='home-contact w-screen h-screen bg-gradient-to-t xl:bg-gradient-to-tr from-indigo-800 to-indigo-400'
+      className='home-contact w-screen h-screen bg-gradient-to-t xl:bg-gradient-to-tr from-indigo-600 to-indigo-400'
     >
       <div className='container py-5'>
         <div className='flex flex-col xl:items-center'>
