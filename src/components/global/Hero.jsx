@@ -18,13 +18,12 @@ export default function Hero({ data: { heading, body }, classes = '' }) {
   return (
     <section
       className={classNames(
-        'global-hero flex min-h-90 cursor-dark cursor-arrow',
+        'global-hero flex min-h-90 cursor-dark w-full h-full',
         {
           classes,
         }
       )}
       onClick={onClick}
-      data-scroll-section
     >
       <div className='container my-auto'>
         <div className='flex flex-col items-center justify-center'>

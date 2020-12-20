@@ -20,6 +20,10 @@ export default function Locomotive() {
   const map = (x, a, b, c, d) => ((x - a) * (d - c)) / (b - a) + c;
 
   useEffect(() => {
+    setLocomotive(null);
+  }, [location.pathname]);
+
+  useEffect(() => {
     if (isNull(locomotive)) {
       setLocomotive(
         new LocomotiveScroll({
