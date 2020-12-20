@@ -14,7 +14,7 @@ export default function Contact() {
   const [loading, setLoading] = useState(false);
   const formRef = useRef();
 
-  const onSubmit = (data) => {
+  const onSubmit = () => {
     setLoading(true);
     sendForm(
       'service_1vki1m9',
@@ -23,12 +23,12 @@ export default function Contact() {
       'user_KwY7DKIDRj2KBKeNhT1fC'
     )
       .then(
-        (result) => {
+        () => {
           setForm(
             'Thanks for getting in touch. I will respond as soon as I can'
           );
         },
-        (error) => {
+        () => {
           setForm('An error has occured, please try again later');
         }
       )
@@ -42,7 +42,7 @@ export default function Contact() {
       data-scroll-section
       className='home-contact w-screen h-screen bg-gradient-to-t xl:bg-gradient-to-tr from-indigo-600 to-indigo-400'
     >
-      <div className='container py-5'>
+      <div className='container py-5 h-full flex items-center'>
         <div className='flex flex-col xl:items-center'>
           <h1 className='heading-2xl heading-2xl--outline text-white mb-4'>
             Get In Touch

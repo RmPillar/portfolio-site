@@ -139,25 +139,29 @@ body {
   }
 }
 
-.copy-l {
-  font-weight: 400;
-  font-size: 1rem;
-  @screen md {
-    font-size: 1.25rem;
-  }
-  @screen xl {
-    font-size: 1.5rem;
+@responsive {
+  .copy-l {
+    font-weight: 400;
+    font-size: 1rem;
+    @screen md {
+      font-size: 1.25rem;
+    }
+    @screen xl {
+      font-size: 1.5rem;
+    }
   }
 }
 
-.copy {
-  font-weight: 400;
-  font-size: 0.9rem;
-  @screen md {
-    font-size: 1rem;
-  }
-  @screen xl {
-    font-size: 1.125rem;
+@responsive {
+  .copy {
+    font-weight: 400;
+    font-size: 0.9rem;
+    @screen md {
+      font-size: 1rem;
+    }
+    @screen xl {
+      font-size: 1.125rem;
+    }
   }
 }
 

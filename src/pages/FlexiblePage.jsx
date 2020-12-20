@@ -10,6 +10,7 @@ export default function FlexiblePage({ data }) {
   return (
     <section className='page-flexible h-full overflow-hidden bg-gray-100'>
       <Header />
+
       {!isEmpty(data.hero) && <Hero data={data.hero} />}
       <div
         className='rounded-t-full min-h-30 h-30 w-full bg-gradient-to-br from-indigo-500 to-indigo-600'
