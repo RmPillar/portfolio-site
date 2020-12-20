@@ -8,6 +8,8 @@ import Work from '../../pages/Work';
 import Skills from '../../pages/Skills';
 import Projects from '../../pages/Projects';
 
+import data from '../../assets/data';
+
 export default function Routes() {
   return (
     <Switch>
@@ -15,16 +17,16 @@ export default function Routes() {
         <Home />
       </Route>
       <Route path='/about'>
-        <About />
+        <About data={data.about} />
       </Route>
       <Route path='/skills'>
-        <Skills />
+        <Skills data={data.skills} />
       </Route>
       <Route path='/work'>
-        <Work />
+        <Work data={data.work} />
       </Route>
       <Route path='/projects'>
-        <Projects />
+        <Projects data={data.projects} />
       </Route>
     </Switch>
   );

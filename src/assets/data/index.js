@@ -1,6 +1,8 @@
 const data = {
   about: {
-    heading: 'About Me',
+    hero: {
+      heading: 'About Me',
+    },
     layout: [
       {
         type: 'image-content',

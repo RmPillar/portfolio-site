@@ -1,13 +1,18 @@
 import React from 'react';
-import Slider from '../components/global/Slider';
 
-import data from '../assets/data';
+import Hero from '../components/global/Hero';
 
-export default function About() {
+import { isEmpty } from 'lodash';
+
+export default function About({ data }) {
   return (
     <section className='page-about h-full overflow-hidden'>
-      <h1 className='heading-xl text-center mb-8'>{data.about.heading}</h1>
-      <Slider slides={data.about.slides} />
+      {!isEmpty(data.hero) && <Hero data={data.hero} />}
+      <div
+        className='rounded-t-full h-30 w-full bg-gradient-to-br from-indigo-500 to-indigo-600'
+        id='first'
+      ></div>
+      <div className='h-screen w-full bg-gradient-to-tr from-indigo-500 to-indigo-600'></div>
     </section>
   );
 }

@@ -184,6 +184,12 @@ body {
   }
 }
 
+.text-gradient {
+  background: inherit;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
 .rich-content {
   @apply w-full whitespace-normal;
 
@@ -206,10 +212,12 @@ body {
   h4,
   h5,
   h6 {
-    @apply -mb-4;
+    & + * {
+      @apply -mb-2;
 
-    @screen xl {
-      @apply -mb-6;
+      @screen xl {
+        @apply -mb-4;
+      }
     }
   }
 

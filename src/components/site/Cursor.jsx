@@ -10,6 +10,7 @@ import classNames from 'classnames';
 import gsap from 'gsap';
 
 import { initEvents, destroyEvents } from '../../utils/utils';
+import { useLocation } from 'react-router-dom';
 
 export default function Cursor() {
   const [dark, setDark] = useState(false);
@@ -18,6 +19,8 @@ export default function Cursor() {
   const [arrow, setArrow] = useState(false);
 
   const cursorRef = useRef();
+
+  const location = useLocation();
 
   const onMouseOut = useCallback(() => {
     setHidden(true);
@@ -37,10 +40,7 @@ export default function Cursor() {
   const onMouseHoverOut = useCallback(() => {
     setHover(false);
   }, []);
-  const onMouseArrowUp = useCallback(() => {
-    setArrow(true);
-  }, []);
-  const onMouseArrowDown = useCallback(() => {
+  const onMouseArrow = useCallback(() => {
     setArrow(true);
   }, []);
   const onMouseArrowOut = useCallback(() => {
@@ -79,22 +79,12 @@ export default function Cursor() {
         callBack: onMouseDarkOut,
       },
       {
-        target: document.getElementsByClassName('cursor-arrowUp'),
+        target: document.getElementsByClassName('cursor-arrow'),
         event: 'mouseenter',
-        callBack: onMouseArrowUp,
+        callBack: onMouseArrow,
       },
       {
-        target: document.getElementsByClassName('cursor-arrowUp'),
-        event: 'mouseleave',
-        callBack: onMouseArrowOut,
-      },
-      {
-        target: document.getElementsByClassName('cursor-arrowDown'),
-        event: 'mouseenter',
-        callBack: onMouseArrowDown,
-      },
-      {
-        target: document.getElementsByClassName('cursor-arrowDown'),
+        target: document.getElementsByClassName('cursor-arrow'),
         event: 'mouseleave',
         callBack: onMouseArrowOut,
       },
@@ -106,11 +96,18 @@ export default function Cursor() {
       onMouseDark,
       onMouseDarkOut,
       onMouseOut,
-      onMouseArrowUp,
-      onMouseArrowDown,
+      onMouseArrow,
       onMouseArrowOut,
+      location.pathname,
     ]
   );
+
+  useEffect(() => {
+    setDark(false);
+    setHover(false);
+    setArrow(false);
+    setHidden(false);
+  }, [location.pathname]);
 
   useEffect(() => {
     initEvents(events);
@@ -125,24 +122,19 @@ export default function Cursor() {
           'site-cursor--hidden': hidden,
           'site-cursor--dark': dark,
           'site-cursor--hover': hover,
-          'site-cursor--arrowUp': arrow,
-          // 'site-cursor--arrowDown': arrow,
+          'site-cursor--arrow': arrow,
         }
       )}
       ref={cursorRef}
     >
       <span className='site-cursor__dot rounded-full pointer-events-none border-2 border-white relative flex items-center justify-center transition-all duration-500 ease-in-out'>
-        <span className='site-cursor__arrow'>
+        <span className='site-cursor__arrow transition-all duration-500 ease-in-out'>
           <svg
+            viewBox='0 0 482.239 482.239'
             xmlns='http://www.w3.org/2000/svg'
-            viewBox='0 0 20 20'
-            fill='currentColor'
+            className='pointer-events-none'
           >
-            <path
-              fillRule='evenodd'
-              d='M5.293 7.707a1 1 0 010-1.414l4-4a1 1 0 011.414 0l4 4a1 1 0 01-1.414 1.414L11 5.414V17a1 1 0 11-2 0V5.414L6.707 7.707a1 1 0 01-1.414 0z'
-              clipRule='evenodd'
-            />
+            <path d='M206.812 34.446L0 241.119l206.743 206.674 24.353-24.284L65.929 258.342h416.31v-34.445H65.929L231.165 58.661z' />
           </svg>
         </span>
       </span>

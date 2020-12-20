@@ -11,6 +11,17 @@
       @apply border-gray-900;
     }
   }
+  &--arrow {
+    .site-cursor__dot {
+      @apply border-transparent;
+      cursor: pointer;
+    }
+    .site-cursor__arrow {
+      transform: rotate(-90deg) scale(1);
+      cursor: pointer;
+    }
+    cursor: pointer;
+  }
 }
 
 .site-cursor__dot {
@@ -20,9 +31,9 @@
 }
 
 .site-cursor__arrow {
-  @apply is-hidden;
-  width: 20px;
-  min-width: 20px;
+  width: 150px;
+  min-width: 150px;
+  transform: rotate(-90deg) scale(0);
 }
 
 .site-cursor--hover {
@@ -33,11 +44,6 @@
   &.site-cursor--dark {
     .site-cursor__dot {
       @apply bg-gray-900 opacity-50;
-    }
-  }
-  &.site-cursor--arrowUp {
-    .site-cursor__arrow {
-      @apply is-visible;
     }
   }
 }
