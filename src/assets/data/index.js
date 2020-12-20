@@ -12,9 +12,36 @@ const data = {
         },
         body: '### A Front-End developer based in Sheffield',
         imagePosition: 'left',
+        id: 'first',
       },
       {
         type: 'content',
+        body:
+          'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
+      },
+      {
+        type: 'slider',
+        heading: 'Interests',
+        slides: [
+          {
+            url: 'doughnuts.jpg',
+            alt: 'Lemon Curd Doughnuts',
+            caption: 'Baking',
+          },
+          {
+            url: 'tough-mudder.jpg',
+            alt: 'Robin Pillar',
+            caption: 'Fitness',
+          },
+          {
+            url: 'curbar.jpg',
+            alt: 'Robin Pillar',
+            caption: 'Hiking',
+          },
+          {
+            caption: 'Leader at Oaks Community Church',
+          },
+        ],
         body:
           'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
       },
@@ -26,33 +53,6 @@ const data = {
         },
         body: '### A Front-End developer based in Sheffield',
         imagePosition: 'right',
-      },
-      {
-        type: 'slider',
-        slides: [
-          {
-            url: 'robin-pillar.jpg',
-            alt: 'Robin Pillar',
-          },
-          {
-            url: 'robin-pillar.jpg',
-            alt: 'Robin Pillar',
-          },
-          {
-            url: 'robin-pillar.jpg',
-            alt: 'Robin Pillar',
-          },
-          {
-            url: 'robin-pillar.jpg',
-            alt: 'Robin Pillar',
-          },
-          {
-            url: 'robin-pillar.jpg',
-            alt: 'Robin Pillar',
-          },
-        ],
-        body:
-          'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
       },
     ],
   },

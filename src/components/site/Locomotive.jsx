@@ -24,9 +24,9 @@ export default function Locomotive() {
       setLocomotive(
         new LocomotiveScroll({
           el: scrollRef.current,
-          smooth: true,
+          smooth: location.pathname === '/',
           direction: location.pathname === '/' ? 'horizontal' : 'vertical',
-          multiplier: 0.6,
+          multiplier: 0.5,
         })
       );
     }
@@ -73,8 +73,11 @@ export default function Locomotive() {
   useEffect(() => {
     if (!isNull(scroll) && !isNull(locomotive)) {
       const target = document.querySelector(scroll);
-      locomotive.scrollTo(target);
-      dispatch(setScroll(null));
+      locomotive.scrollTo(target, {
+        offset: -100,
+        easing: [0.16, 1, 0.3, 1],
+        callback: () => dispatch(setScroll(null)),
+      });
     }
   }, [scroll, locomotive, dispatch]);
 

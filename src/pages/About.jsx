@@ -1,18 +1,19 @@
 import React from 'react';
 
 import Hero from '../components/global/Hero';
+import Layout from '../components/global/Layout';
 
 import { isEmpty } from 'lodash';
 
 export default function About({ data }) {
   return (
-    <section className='page-about h-full overflow-hidden'>
+    <section className='page-about h-full overflow-hidden bg-gray-100'>
       {!isEmpty(data.hero) && <Hero data={data.hero} />}
       <div
         className='rounded-t-full h-30 w-full bg-gradient-to-br from-indigo-500 to-indigo-600'
-        id='first'
+        data-scroll-section
       ></div>
-      <div className='h-screen w-full bg-gradient-to-tr from-indigo-500 to-indigo-600'></div>
+      <Layout data={data.layout} />
     </section>
   );
 }

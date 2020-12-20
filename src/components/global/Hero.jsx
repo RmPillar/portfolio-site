@@ -24,6 +24,7 @@ export default function Hero({ data: { heading, body }, classes = '' }) {
         }
       )}
       onClick={onClick}
+      data-scroll-section
     >
       <div className='container my-auto'>
         <div className='flex flex-col items-center justify-center'>

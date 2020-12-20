@@ -1,6 +1,5 @@
 @import 'tailwindcss/base';
 
-@import 'locomotive-scroll/dist/locomotive-scroll.min.css';
 @import 'swiper/swiper-bundle.min.css';
 
 @import './typography';
@@ -10,6 +9,7 @@
 
 @import 'components/site/cursor';
 @import 'components/site/scrollbar';
+@import 'components/site/locomotive-scroll';
 
 @import 'components/home/page-card';
 
