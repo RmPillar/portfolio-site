@@ -10,7 +10,6 @@ import classNames from 'classnames';
 import gsap from 'gsap';
 
 import { initEvents, destroyEvents } from '../../utils/utils';
-import { useLocation } from 'react-router-dom';
 
 export default function Cursor() {
   const [dark, setDark] = useState(false);
@@ -19,8 +18,6 @@ export default function Cursor() {
   const [arrow, setArrow] = useState(false);
 
   const cursorRef = useRef();
-
-  const location = useLocation();
 
   const onMouseOut = useCallback(() => {
     setHidden(true);
@@ -98,16 +95,8 @@ export default function Cursor() {
       onMouseOut,
       onMouseArrow,
       onMouseArrowOut,
-      location.pathname,
     ]
   );
-
-  useEffect(() => {
-    setDark(false);
-    setHover(false);
-    setArrow(false);
-    setHidden(false);
-  }, [location.pathname]);
 
   useEffect(() => {
     initEvents(events);
@@ -127,7 +116,7 @@ export default function Cursor() {
       )}
       ref={cursorRef}
     >
-      <span className='site-cursor__dot rounded-full pointer-events-none border-2 border-white relative flex items-center justify-center transition-all duration-500 ease-in-out'>
+      <span className='site-cursor__dot rounded-full pointer-events-none border-2 border-gray-900 relative flex items-center justify-center transition-all duration-500 ease-in-out'>
         <span className='site-cursor__arrow transition-all duration-500 ease-in-out'>
           <svg
             viewBox='0 0 482.239 482.239'

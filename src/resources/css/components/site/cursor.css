@@ -8,7 +8,7 @@
   }
   &--dark {
     .site-cursor__dot {
-      @apply border-gray-900;
+      @apply border-white;
     }
   }
   &--arrow {
@@ -39,11 +39,11 @@
 .site-cursor--hover {
   .site-cursor__dot {
     transform: translate(-50%, -50%) scale(1.5);
-    @apply bg-white opacity-50;
+    @apply bg-gray-900 opacity-50;
   }
   &.site-cursor--dark {
     .site-cursor__dot {
-      @apply bg-gray-900 opacity-50;
+      @apply bg-white opacity-50;
     }
   }
 }

@@ -1,13 +1,14 @@
 import React, { useState, useEffect, useRef } from 'react';
 
-import Routes from './Routes';
-
-import LocomotiveScroll from 'locomotive-scroll';
-import gsap from 'gsap';
-import { isNull } from 'lodash';
-import { useLocation } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import { setScroll } from '../../store/actions/app';
+
+import Home from '../../pages/Home';
+
+import gsap from 'gsap';
+import LocomotiveScroll from 'locomotive-scroll';
+
+import { isNull } from 'lodash';
 
 export default function Locomotive() {
   const [locomotive, setLocomotive] = useState(null);
@@ -15,22 +16,17 @@ export default function Locomotive() {
   const dispatch = useDispatch();
 
   const scrollRef = useRef();
-  const location = useLocation();
 
   const map = (x, a, b, c, d) => ((x - a) * (d - c)) / (b - a) + c;
-
-  useEffect(() => {
-    setLocomotive(null);
-  }, [location.pathname]);
 
   useEffect(() => {
     if (isNull(locomotive)) {
       setLocomotive(
         new LocomotiveScroll({
           el: scrollRef.current,
-          smooth: location.pathname === '/',
-          direction: location.pathname === '/' ? 'horizontal' : 'vertical',
-          multiplier: 0.5,
+          smooth: true,
+          direction: 'horizontal',
+          multiplier: 0.6,
         })
       );
     }
@@ -41,13 +37,12 @@ export default function Locomotive() {
         setLocomotive(null);
       }
     };
-  }, [locomotive, scrollRef, location.pathname]);
+  }, [locomotive, scrollRef]);
 
   useEffect(() => {
     if (
       !isNull(locomotive) &&
-      window.matchMedia(`(min-width: 1025px)`).matches &&
-      location.pathname === '/'
+      window.matchMedia(`(min-width: 1025px)`).matches
     ) {
       locomotive.on('scroll', (obj) => {
         const keys = Object.keys(obj.currentElements);
@@ -72,7 +67,7 @@ export default function Locomotive() {
       });
       locomotive.update();
     }
-  }, [locomotive, scrollRef, location.pathname]);
+  }, [locomotive, scrollRef]);
 
   useEffect(() => {
     if (!isNull(scroll) && !isNull(locomotive)) {
@@ -87,7 +82,7 @@ export default function Locomotive() {
 
   return (
     <div ref={scrollRef}>
-      <Routes />
+      <Home />
     </div>
   );
 }

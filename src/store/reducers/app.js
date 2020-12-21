@@ -1,6 +1,7 @@
 const initState = {
   scroll: null,
   menuOpen: false,
+  modal: false,
 };
 
 const appReducer = (state = initState, { type, payload }) => {
@@ -9,6 +10,8 @@ const appReducer = (state = initState, { type, payload }) => {
       return { ...state, scroll: payload };
     case 'TOGGLEMENU':
       return { ...state, menuOpen: !state.menuOpen };
+    case 'TOGGLEMODAL':
+      return { ...state, modal: payload };
     default:
       return state;
   }

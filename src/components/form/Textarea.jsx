@@ -9,7 +9,7 @@ export default forwardRef(function Textarea(
     <>
       <label className='form-label'>{label}</label>
       <textarea
-        className={classNames('form-textarea cursor-dark', { classes })}
+        className={classNames('form-textarea', classes)}
         name={name}
         placeholder={placeholder}
         ref={ref}

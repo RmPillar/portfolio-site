@@ -94,6 +94,12 @@ module.exports = {
       minHeight: (theme) => ({
         ...theme('spacing'),
       }),
+      minWidth: (theme) => ({
+        ...theme('spacing'),
+      }),
+      maxWidth: (theme) => ({
+        ...theme('spacing'),
+      }),
       borderWidth: {
         1: '1px',
       },

@@ -3,6 +3,7 @@ import React from 'react';
 import Intro from '../components/home/Intro';
 import List from '../components/home/List';
 import Contact from '../components/home/Contact';
+import Modal from '../components/home/Modal';
 
 export default function Home() {
   return (
@@ -13,6 +14,7 @@ export default function Home() {
       <Intro />
       <List />
       <Contact />
+      <Modal />
     </section>
   );
 }

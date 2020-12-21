@@ -9,7 +9,7 @@ export default forwardRef(function Input(
     <span>
       <label className='form-label'>{label}</label>
       <input
-        className={classNames('form-input cursor-dark', { classes })}
+        className={classNames('form-input', classes)}
         name={name}
         placeholder={placeholder}
         ref={ref}

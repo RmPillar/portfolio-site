@@ -1,7 +1,6 @@
 import React from 'react';
 
-import { BrowserRouter as Router } from 'react-router-dom';
-
+import Header from './components/site/Header';
 import Cursor from './components/site/Cursor';
 import Locomotive from './components/site/Locomotive';
 import MobileMenu from './components/site/MobileMenu';
@@ -9,11 +8,10 @@ import MobileMenu from './components/site/MobileMenu';
 function App() {
   return (
     <main className='App flex flex-col min-h-screen'>
-      <Router>
-        <Cursor />
-        <MobileMenu />
-        <Locomotive />
-      </Router>
+      <Cursor />
+      <Header />
+      <MobileMenu />
+      <Locomotive />
     </main>
   );
 }

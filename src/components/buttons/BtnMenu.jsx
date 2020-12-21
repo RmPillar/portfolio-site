@@ -15,7 +15,9 @@ export default function BtnMenu({ classes }) {
 
   return (
     <button
-      className={classNames('btn btn--menu', classes, { active: menuOpen })}
+      className={classNames('btn btn--menu cursor-trigger', classes, {
+        active: menuOpen,
+      })}
       aria-label='Toggle Menu'
       onClick={onClick}
     >
