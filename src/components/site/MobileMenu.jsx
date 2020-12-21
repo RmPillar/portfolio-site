@@ -21,14 +21,23 @@ export default function MobileMenu() {
         { 'transform translate-x-full': !menuOpen }
       )}
     >
-      <div className='p-8 flex flex-col items-start space-y-6 mt-10 heading text-white'>
-        <button className='cursor-trigger' onClick={() => onClick('#home')}>
+      <div className='p-8 flex flex-col items-start space-y-6 mt-10  text-white'>
+        <button
+          className='heading cursor-trigger'
+          onClick={() => onClick('#home')}
+        >
           Robin Pillar
         </button>
-        <button className='cursor-trigger' onClick={() => onClick('#projects')}>
+        <button
+          className='heading cursor-trigger'
+          onClick={() => onClick('#projects')}
+        >
           Projects
         </button>
-        <button className='cursor-trigger' onClick={() => onClick('#contact')}>
+        <button
+          className='heading cursor-trigger'
+          onClick={() => onClick('#contact')}
+        >
           Contact
         </button>
       </div>

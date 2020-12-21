@@ -49,7 +49,7 @@ export default function Locomotive() {
         keys.forEach((key, idx) => {
           const element = obj.currentElements[key];
           const classList = element.el.classList;
-          if (classList.contains('home-pageCard')) {
+          if (classList.contains('home-card')) {
             const progress = element.progress;
 
             const translationVal =
@@ -75,6 +75,7 @@ export default function Locomotive() {
       locomotive.scrollTo(target, {
         offset: -100,
         easing: [0.16, 1, 0.3, 1],
+        duration: 2000,
         callback: () => dispatch(setScroll(null)),
       });
     }

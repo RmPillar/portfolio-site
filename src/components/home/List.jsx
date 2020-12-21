@@ -9,6 +9,7 @@ export default function List() {
       data-scroll-section
     >
       <div className='h-full flex md-max:flex-col xl-max:flex-wrap items-center justify-center md-max:space-y-10 xl:space-x-20 xl-max:row'>
+        <Card title='Robin Pillar' caption='Web' />
         <Card title='Pokemon Adventure' caption='Mobile App' />
         <Card title='RecipeBook' caption='Web & Mobile App' />
         <Card title='Daily Quests' caption='Mobile App' />
