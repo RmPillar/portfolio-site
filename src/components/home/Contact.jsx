@@ -40,17 +40,21 @@ export default function Contact() {
   return (
     <section
       data-scroll-section
-      className='home-contact w-screen h-screen bg-gray-100'
+      className='home-contact max-w-screen w-screen h-screen bg-gray-100'
       id='contact'
     >
       <div className='container py-5 h-full flex items-center justify-center'>
-        <div className='flex flex-col xl:items-center'>
-          <h1 className='heading-2xl text-gradient bg-gradient-to-tr from-teal-600 to-teal-400 mb-4'>
+        <div className='flex flex-col xl:items-center w-screen'>
+          <h1
+            className='heading-2xl text-gradient bg-gradient-to-tr  from-teal-700 to-teal-300 xl:absolute top-0 inset-x-0 text-center xl:mt-8 xl-max:mb-4'
+            data-scroll
+            data-scroll-speed={-3}
+          >
             Get In Touch
           </h1>
 
           <form
-            className='w-full md:w-10/12'
+            className='w-full md:w-10/12 xl:w-8/12 mx-auto xl:mt-20'
             onSubmit={handleSubmit(onSubmit)}
             ref={formRef}
           >

@@ -17,11 +17,11 @@ export default function MobileMenu() {
   return (
     <section
       className={classNames(
-        'site-mobileMenu fixed h-screen w-full inset-y-0 right-0 transition-transform duration-500 bg-gradient-to-br from-teal-500 to-teal-600 z-30 max-w-90 cursor-dark',
+        'site-mobileMenu fixed h-screen w-full inset-y-0 right-0 transition-transform duration-500 bg-gradient-to-br from-teal-400 to-teal-600 z-30 max-w-90 cursor-dark',
         { 'transform translate-x-full': !menuOpen }
       )}
     >
-      <div className='p-8 flex flex-col items-start space-y-6 mt-10  text-white'>
+      <div className='px-8 py-16 flex flex-col items-start space-y-12 mt-10 text-white'>
         <button
           className='heading cursor-trigger'
           onClick={() => onClick('#home')}

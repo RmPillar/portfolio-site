@@ -58,23 +58,23 @@ body {
 }
 .heading-2xl {
   font-weight: 700;
-  font-size: 5.5rem;
-  line-height: 5.5rem;
+  font-size: 4.5rem;
+  line-height: 5rem;
   &--outline {
     -webkit-text-fill-color: transparent;
     -webkit-text-stroke-width: 4px;
   }
   @screen md {
     font-size: 8rem;
-    line-height: 8rem;
+    line-height: 9rem;
   }
   @screen xl {
     font-size: 9rem;
-    line-height: 9rem;
+    line-height: 10.5rem;
   }
   @screen 2xl {
     font-size: 11rem;
-    line-height: 11rem;
+    line-height: 13rem;
   }
 }
 

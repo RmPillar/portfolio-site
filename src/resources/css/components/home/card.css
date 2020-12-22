@@ -1,12 +1,12 @@
 .home-card {
   @apply w-full;
-  height: 350px;
-  min-height: 350px;
   @screen md {
     width: 50%;
     min-width: 50%;
   }
   @screen xl {
+    height: 350px;
+    min-height: 350px;
     width: 300px;
     min-width: 300px;
   }

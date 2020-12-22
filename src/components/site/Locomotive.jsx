@@ -12,7 +12,7 @@ import { isNull } from 'lodash';
 
 export default function Locomotive() {
   const [locomotive, setLocomotive] = useState(null);
-  const { scroll } = useSelector((state) => state.app);
+  const { scroll, modal } = useSelector((state) => state.app);
   const dispatch = useDispatch();
 
   const scrollRef = useRef();
@@ -80,6 +80,14 @@ export default function Locomotive() {
       });
     }
   }, [scroll, locomotive, dispatch]);
+
+  useEffect(() => {
+    if (!isNull(locomotive)) {
+      if (modal) {
+        locomotive.stop();
+      } else locomotive.start();
+    }
+  }, [modal, locomotive]);
 
   return (
     <div ref={scrollRef}>

@@ -27,6 +27,7 @@ module.exports = {
     extend: {
       zIndex: {
         negative: -1,
+        40: 40,
       },
       width: {
         'out-1/12': 'calc(50vw - 500%)',
@@ -100,6 +101,9 @@ module.exports = {
       maxWidth: (theme) => ({
         ...theme('spacing'),
       }),
+      height: {
+        content: 'fit-content',
+      },
       borderWidth: {
         1: '1px',
       },
