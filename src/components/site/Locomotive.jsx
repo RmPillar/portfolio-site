@@ -1,4 +1,5 @@
 import React, { useState, useEffect, useRef } from 'react';
+import useResizeObserver from 'use-resize-observer';
 
 import { useDispatch, useSelector } from 'react-redux';
 import { setScroll } from '../../store/actions/app';
@@ -11,6 +12,7 @@ import LocomotiveScroll from 'locomotive-scroll';
 import { isNull } from 'lodash';
 
 export default function Locomotive() {
+  const { ref, width = 1, height = 1 } = useResizeObserver();
   const [locomotive, setLocomotive] = useState(null);
   const { scroll, modal } = useSelector((state) => state.app);
   const dispatch = useDispatch();
@@ -21,11 +23,14 @@ export default function Locomotive() {
 
   useEffect(() => {
     if (isNull(locomotive)) {
+      const direction = window.matchMedia(`(min-width: 1025px)`).matches
+        ? 'horizontal'
+        : 'vertical';
       setLocomotive(
         new LocomotiveScroll({
           el: scrollRef.current,
           smooth: true,
-          direction: 'horizontal',
+          direction,
           multiplier: 0.6,
         })
       );
@@ -89,9 +94,24 @@ export default function Locomotive() {
     }
   }, [modal, locomotive]);
 
+  useEffect(() => {
+    const direction = width >= 1025 ? 'horizontal' : 'vertical';
+    setLocomotive(null);
+    setLocomotive(
+      new LocomotiveScroll({
+        el: scrollRef.current,
+        smooth: true,
+        direction,
+        multiplier: 0.6,
+      })
+    );
+  }, [width]);
+
   return (
-    <div ref={scrollRef}>
-      <Home />
+    <div ref={ref}>
+      <div ref={scrollRef} data-scroll-container>
+        <Home />
+      </div>
     </div>
   );
 }

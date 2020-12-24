@@ -21,10 +21,7 @@ export default function Home() {
   };
 
   return (
-    <section
-      className='flex xl-max:flex-col h-screen relative justify-start'
-      data-scroll-container
-    >
+    <section className='flex xl-max:flex-col h-screen relative justify-start'>
       <Intro />
       <List projects={data.projects} />
       <Contact />
