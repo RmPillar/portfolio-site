@@ -90,16 +90,16 @@ export default function PageModal() {
               ))}
             </div>
           </div>
-          <div className='flex w-full'>
+          <div className='md:flex w-full md-max:space-y-4'>
             {!isEmpty(projectData.url) && !isEmpty(projectData.title) && (
-              <div className='w-6/12'>
+              <div className='md:w-4/12 xl:w-6/12'>
                 <a className='cursor-trigger' href={projectData.url}>
                   {projectData.title}
                 </a>
               </div>
             )}
             {!isEmpty(projectData.github) && !isEmpty(projectData.title) && (
-              <div className='w-6/12'>
+              <div className='md:w-4/12 xl:w-6/12'>
                 <a className='cursor-trigger' href={projectData.github}>
                   {projectData.title} Github
                 </a>
