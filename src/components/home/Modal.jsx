@@ -5,6 +5,7 @@ import { toggleModal } from '../../store/actions/app';
 
 import Image from '../global/Image';
 import { ReactComponent as Cross } from '../../assets/svg/cross.svg';
+import ReactMarkdown from 'react-markdown';
 
 import gsap from 'gsap';
 import { isEmpty, isNull } from 'lodash';
@@ -34,6 +35,8 @@ export default function PageModal() {
     dispatch(toggleModal(false));
   };
 
+  const projectData = data.projects[project];
+
   return (
     <section
       ref={modalRef}
@@ -46,18 +49,18 @@ export default function PageModal() {
         <Cross />
       </button>
 
-      {!isEmpty(data.projects[project].title) && (
+      {!isEmpty(projectData.title) && (
         <h2 className='heading text-center mb-4 xl-max:mt-12'>
-          {data.projects[project].title}
+          {projectData.title}
         </h2>
       )}
       <div className='xl:flex row h-full'>
         <div className='column xl:w-6/12 xl:ml-12'>
           <figure className='relative w-full pt-8/12 bg-gradient-to-tl from-indigo-600 to-indigo-400 rounded-20 overflow-hidden mb-4'>
-            {!isEmpty(data.projects[project].image) && (
+            {!isEmpty(projectData.image) && (
               <Image
-                src={data.projects[project].image.src}
-                alt={data.projects[project].image.alt}
+                src={projectData.image.src}
+                alt={projectData.image.alt}
                 classes='object-cover absolute inset-0 h-full w-full object-left'
               />
             )}
@@ -65,7 +68,7 @@ export default function PageModal() {
           <div className='w-full xl-max:hidden'>
             <h4 className='heading-xs mb-2'>Tech Stack</h4>
             <div className='flex flex-wrap row h-4/12 w-8/12'>
-              {data.projects[project].stack.map((item, index) => (
+              {projectData.stack.map((item, index) => (
                 <p className='column block copy mb-2 w-6/12' key={index}>
                   {item}
                 </p>
@@ -73,21 +76,35 @@ export default function PageModal() {
             </div>
           </div>
         </div>
-        <div className='column xl:w-6/12 xl:mr-12'>
-          {!isEmpty(data.projects[project].description) && (
-            <p className='copy whitespace-normal xl-max:mb-4'>
-              {data.projects[project].description}
-            </p>
+        <div className='column xl:w-6/12 xl:mr-12 rich-content flex flex-col items-center'>
+          {!isEmpty(projectData.description) && (
+            <ReactMarkdown>{projectData.description}</ReactMarkdown>
           )}
           <div className='w-full xl:hidden'>
             <h4 className='heading-xs mb-2'>Tech Stack</h4>
             <div className='flex flex-wrap row h-4/12 w-8/12'>
-              {data.projects[project].stack.map((item, index) => (
+              {projectData.stack.map((item, index) => (
                 <p className='column block tagline mb-2 w-6/12' key={index}>
                   {item}
                 </p>
               ))}
             </div>
+          </div>
+          <div className='flex w-full'>
+            {!isEmpty(projectData.url) && !isEmpty(projectData.title) && (
+              <div className='w-6/12'>
+                <a className='cursor-trigger' href={projectData.url}>
+                  {projectData.title}
+                </a>
+              </div>
+            )}
+            {!isEmpty(projectData.github) && !isEmpty(projectData.title) && (
+              <div className='w-6/12'>
+                <a className='cursor-trigger' href={projectData.github}>
+                  {projectData.title} Github
+                </a>
+              </div>
+            )}
           </div>
         </div>
       </div>

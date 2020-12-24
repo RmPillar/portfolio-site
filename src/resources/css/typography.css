@@ -243,7 +243,10 @@ body {
   }
 
   a {
-    @apply underline inline;
+    @apply underline inline text-indigo-500 transition-all duration-500;
+    &:hover {
+      @apply text-indigo-700;
+    }
   }
 
   ul,
