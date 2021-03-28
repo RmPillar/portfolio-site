@@ -41,7 +41,7 @@ export default function Home({ data }) {
 
 export async function getStaticProps(context) {
   console.log(context);
-  const res = await fetch(`https://portfolio-site-wheat.vercel.app/api/data`);
+  const res = await fetch(`http://portfolio-site-wheat.vercel.app/api/data`);
   const data = await res.json();
 
   if (!data) {
