@@ -1,5 +1,4 @@
 import { useDispatch, useSelector } from 'react-redux';
-import { useRouter } from 'next/router';
 import { toggleModal } from '../store/actions/app';
 
 import Page from '../components/site/Page';
@@ -9,6 +8,8 @@ import Contact from '../components/home/Contact';
 import Modal from '../components/home/Modal';
 
 import classNames from 'classnames';
+
+import data from '../assets/data/index.json';
 
 export default function Home({ data }) {
   const { modal, menuOpen } = useSelector((state) => state.app);
@@ -40,10 +41,6 @@ export default function Home({ data }) {
 }
 
 export async function getStaticProps(context) {
-  console.log(context);
-  const res = await fetch(`http://portfolio-site-wheat.vercel.app/api/data`);
-  const data = await res.json();
-
   if (!data) {
     return {
       notFound: true,
