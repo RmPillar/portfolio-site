@@ -1,6 +1,7 @@
 import React from 'react';
 import dynamic from 'next/dynamic';
 import Header from './Header';
+import MobileMenu from './MobileMenu';
 
 const Locomotive = dynamic(() => import('./Locomotive'), {
   ssr: false,
@@ -15,6 +16,7 @@ function Page({ children }) {
     <section className='site-page flex flex-col min-h-screen'>
       <Cursor />
       <Header />
+      <MobileMenu />
       <Locomotive>{children}</Locomotive>
     </section>
   );
