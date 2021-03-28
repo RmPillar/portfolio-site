@@ -4,7 +4,7 @@ import { useSelector, useDispatch } from 'react-redux';
 import { toggleModal } from '../../store/actions/app';
 
 // import Image from '../global/Image';
-import Cross from '../svg/cross';
+import Cross from '../svg/Cross';
 
 import ReactMarkdown from 'react-markdown';
 
