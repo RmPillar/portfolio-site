@@ -1,0 +1,44 @@
+{
+  "projects": [
+    {
+      "title": "Project One",
+      "caption": "Web",
+      "icon": {},
+      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+      "image": {},
+      "stack": ["React", "Redux", "GSAP"],
+      "url": "lorem-ipsum.uk",
+      "github": "https://github.com/RmPillar"
+    },
+    {
+      "title": "Project Two",
+      "caption": "Mobile App",
+      "icon": {},
+      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+      "image": {},
+      "stack": ["React", "Redux", "GSAP"],
+      "url": "lorem-ipsum.uk",
+      "github": "https://github.com/RmPillar"
+    },
+    {
+      "title": "Project Three",
+      "caption": "Web & Mobile",
+      "icon": {},
+      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+      "image": {},
+      "stack": ["React", "Redux", "GSAP"],
+      "url": "lorem-ipsum.uk",
+      "github": "https://github.com/RmPillar"
+    },
+    {
+      "title": "Project Four",
+      "caption": "Web",
+      "icon": {},
+      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+      "image": {},
+      "stack": ["React", "Redux", "GSAP"],
+      "url": "lorem-ipsum.uk",
+      "github": "https://github.com/RmPillar"
+    }
+  ]
+}

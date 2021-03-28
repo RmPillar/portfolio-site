@@ -1,0 +1,20 @@
+@import 'tailwindcss/base';
+
+@import './typography';
+@import './layout';
+@import './utilities';
+
+@import 'components/site/cursor';
+@import 'components/site/locomotive-scroll';
+@import 'components/site/scrollbar';
+
+@import 'components/home/card';
+
+@import 'components/global/loader';
+
+@import 'components/btn/btn';
+@import 'components/form/form';
+
+@import 'tailwindcss/components';
+
+@import 'tailwindcss/utilities';

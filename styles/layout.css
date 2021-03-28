@@ -1,0 +1,48 @@
+@responsive {
+  .container {
+    max-width: 1320px;
+    @apply w-full px-20 mx-auto;
+
+    @screen md {
+      @apply px-40;
+    }
+
+    @screen xl {
+      @apply px-60;
+    }
+  }
+}
+
+@responsive {
+  .row {
+    margin-left: -5px;
+    margin-right: -5px;
+
+    @screen md {
+      margin-left: -8px;
+      margin-right: -8px;
+    }
+
+    @screen xl {
+      margin-left: -12px;
+      margin-right: -12px;
+    }
+  }
+}
+
+@responsive {
+  .column {
+    padding-left: 5px;
+    padding-right: 5px;
+
+    @screen md {
+      padding-left: 8px;
+      padding-right: 8px;
+    }
+
+    @screen xl {
+      padding-left: 12px;
+      padding-right: 12px;
+    }
+  }
+}

@@ -1,0 +1,42 @@
+.site-cursor {
+  @apply fixed w-30 h-30;
+  z-index: 9999;
+  &--hidden {
+    @apply opacity-0;
+  }
+  &--dark {
+    .site-cursor__dot {
+      @apply border-white;
+    }
+  }
+  &--arrow {
+    .site-cursor__dot {
+      @apply border-transparent;
+      cursor: pointer;
+    }
+    .site-cursor__arrow {
+      @apply transform -rotate-90 scale-100;
+      cursor: pointer;
+    }
+    cursor: pointer;
+  }
+}
+
+.site-cursor__dot {
+  @apply w-30 h-30 transform -translate-x-6/12 -translate-y-6/12 scale-100;
+}
+
+.site-cursor__arrow {
+  @apply w-150 flex flex-shrink-0 transform -rotate-90 scale-0;
+}
+
+.site-cursor--hover {
+  .site-cursor__dot {
+    @apply bg-gray-900 opacity-50 transform -translate-x-6/12 -translate-y-6/12 scale-150;
+  }
+  &.site-cursor--dark {
+    .site-cursor__dot {
+      @apply bg-white opacity-50;
+    }
+  }
+}

@@ -1,0 +1,26 @@
+button,
+.btn,
+a {
+  @apply transition-all duration-300;
+  display: inline-block;
+  text-decoration: none;
+  cursor: pointer;
+  touch-action: manipulation;
+  user-select: none;
+  appearance: none;
+
+  &:focus {
+    outline: none;
+  }
+
+  &:disabled {
+    cursor: not-allowed;
+  }
+}
+
+.btn--cover {
+  &:before {
+    content: '';
+    @apply absolute inset-0 w-full h-full z-10;
+  }
+}
