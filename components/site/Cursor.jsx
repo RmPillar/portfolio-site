@@ -120,7 +120,7 @@ export default function Cursor() {
       )}
       ref={cursorRef}
     >
-      <span className='site-cursor__dot rounded-full pointer-events-none border-2 border-gray-900 relative flex items-center justify-center transition-all duration-500 ease-in-out'>
+      <span className='site-cursor__dot rounded-full pointer-events-none border-2 border-gray-900 relative flex items-center justify-center transform -translate-x-6/12 -translate-y-6/12 transition-all duration-500 ease-in-out'>
         <span className='site-cursor__arrow transition-all duration-500 ease-in-out'>
           <svg
             viewBox='0 0 482.239 482.239'

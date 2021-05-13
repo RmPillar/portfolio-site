@@ -94,7 +94,6 @@ export default function Locomotive({ children }) {
   }, [modal, locomotive]);
 
   useEffect(() => {
-    console.log('hello');
     const direction = width >= 1025 ? 'horizontal' : 'vertical';
     setLocomotive(null);
     setLocomotive(
