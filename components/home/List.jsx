@@ -11,7 +11,7 @@ export default function List({ projects }) {
       <h1
         className='heading-2xl text-gradient bg-gradient-to-tr from-indigo-700 to-indigo-300 xl:absolute inset-x-0 text-center xl:mt-40 xl-max:mb-20'
         data-scroll
-        data-scroll-speed={-3}
+        data-scroll-speed={-2}
       >
         Projects
       </h1>

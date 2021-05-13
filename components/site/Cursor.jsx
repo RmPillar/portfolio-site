@@ -32,6 +32,7 @@ export default function Cursor() {
     setDark(false);
   }, []);
   const onMouseHover = useCallback(() => {
+    console.log('hello');
     setHover(true);
   }, []);
   const onMouseHoverOut = useCallback(() => {

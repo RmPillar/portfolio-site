@@ -1,44 +1,57 @@
 {
   "projects": [
     {
-      "title": "Project One",
+      "title": "RobinPillar.co.uk",
       "caption": "Web",
       "icon": {},
-      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
-      "image": {},
-      "stack": ["React", "Redux", "GSAP"],
-      "url": "lorem-ipsum.uk",
-      "github": "https://github.com/RmPillar"
+      "description": "My personal porfolio site, built to showcase the various development projects I have worked on, both personal and professional. \n\nThis site has been built using Next.js, along with GSAP and Locomotoive Scroll for the animations and scroll behaviour",
+      "image": {
+        "src": "/img/robin-pillar-site.png",
+        "alt": "Robin Pillar Site"
+      },
+      "stack": ["Next.js", "Redux", "GSAP"],
+      "url": "robinpillar.co.uk",
+      "github": "https://github.com/RmPillar/portfolio-site"
     },
     {
-      "title": "Project Two",
+      "title": "Life Dronfield",
+      "caption": "Web",
+      "icon": {
+        "src": "/img/life-logo.png",
+        "alt": "Life Dronfield"
+      },
+      "description": "A charity based out of the local churches in Dronfield, Derbyshire, came to me as their current website is outdated, slow and difficult to use, and they needed something better suited to their needs as they grow. \n\nI have taken their current site and designed a fully flexible, responsive and fit-for-purpose site which will allow them to adapt and grow as they grow as a charity in the coming years",
+      "image": {
+        "src": "/img/life-logo.png",
+        "alt": "Life Dronfield"
+      },
+      "stack": ["Wordpress", "Vue", "GSAP"],
+      "url": "",
+      "design": "https://www.figma.com/file/cHjg4zt821O8WnAh8e1iEr/Website-Design?node-id=0%3A1",
+      "github": ""
+    },
+    {
+      "title": "RecipeBook",
+      "caption": "Web & Mobile App",
+      "icon": {
+        "src": "/img/recipebook-logo.png",
+        "alt": "RecipeBook Logo"
+      },
+      "description": "As someone who spends much of his free time either coding or baking, I wanted to build something that would involve both of these hobbies. \n\nRecipeBook is a web and mobile app designed to be a way for people to store and display all their recipes in a fun, much more UX friendly way, without the pages and pages of personal stories and anecdotes that fill the majority of current recipe/blog sites",
+      "image": {},
+      "stack": ["React (Web)", "React Native (Mobile)", "Node.js"],
+      "url": "",
+      "github": "https://github.com/RmPillar/RecipeBook"
+    },
+    {
+      "title": "Pokemon Adventure",
       "caption": "Mobile App",
-      "icon": {},
-      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+      "icon": { "src": "/img/pikachu.png", "alt": "Pikachu" },
+      "description": "##### Can you build a game in React Native? \n\nWhen trying to learn React Native, I decided I wanted to build some kind of interactive game and take a look at the challenges involved in doing so with this framework. \n\nUsing the PokeAPI to provide the pokemon data, and the current pokemon games for the general battle logic, I was able to build a mobile game for both iOS and Android based on the much loved Pokemon series I grew up with",
       "image": {},
-      "stack": ["React", "Redux", "GSAP"],
-      "url": "lorem-ipsum.uk",
-      "github": "https://github.com/RmPillar"
-    },
-    {
-      "title": "Project Three",
-      "caption": "Web & Mobile",
-      "icon": {},
-      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
-      "image": {},
-      "stack": ["React", "Redux", "GSAP"],
-      "url": "lorem-ipsum.uk",
-      "github": "https://github.com/RmPillar"
-    },
-    {
-      "title": "Project Four",
-      "caption": "Web",
-      "icon": {},
-      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
-      "image": {},
-      "stack": ["React", "Redux", "GSAP"],
-      "url": "lorem-ipsum.uk",
-      "github": "https://github.com/RmPillar"
+      "stack": ["React Native", "Redux"],
+      "url": "",
+      "github": "https://github.com/RmPillar/PokemonAdventure"
     }
   ]
 }

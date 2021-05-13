@@ -3,7 +3,7 @@ import React, { useEffect, useRef } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { toggleModal } from '../../store/actions/app';
 
-// import Image from '../global/Image';
+import Image from 'next/image';
 import Cross from '../svg/Cross';
 
 import ReactMarkdown from 'react-markdown';
@@ -58,13 +58,14 @@ export default function PageModal() {
       <div className='xl:flex row h-full'>
         <div className='column xl:w-6/12 xl:ml-60'>
           <figure className='relative w-full pt-8/12 bg-gradient-to-tl from-indigo-600 to-indigo-400 rounded-20 overflow-hidden mb-20'>
-            {/* {!isEmpty(projectData.image) && (
+            {!isEmpty(projectData.image) && (
               <Image
                 src={projectData.image.src}
                 alt={projectData.image.alt}
-                classes='object-cover absolute inset-0 h-full w-full object-left'
+                layout='fill'
+                className='object-cover absolute inset-0 h-full w-full object-left'
               />
-            )} */}
+            )}
           </figure>
           <div className='w-full xl-max:hidden'>
             <h4 className='heading-xs mb-10'>Tech Stack</h4>
@@ -91,7 +92,7 @@ export default function PageModal() {
               ))}
             </div>
           </div>
-          <div className='md:flex w-full md-max:space-y-20'>
+          <div className='md:flex flex-wrap w-full md-max:space-y-20'>
             {!isEmpty(projectData.url) && !isEmpty(projectData.title) && (
               <div className='md:w-4/12 xl:w-6/12'>
                 <a className='cursor-trigger' href={projectData.url}>
@@ -103,6 +104,13 @@ export default function PageModal() {
               <div className='md:w-4/12 xl:w-6/12'>
                 <a className='cursor-trigger' href={projectData.github}>
                   {projectData.title} Github
+                </a>
+              </div>
+            )}
+            {!isEmpty(projectData.design) && !isEmpty(projectData.title) && (
+              <div className='md:w-4/12 xl:w-6/12'>
+                <a className='cursor-trigger' href={projectData.design}>
+                  {projectData.title} Design
                 </a>
               </div>
             )}
