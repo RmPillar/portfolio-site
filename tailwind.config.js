@@ -77,6 +77,7 @@ module.exports = {
     }),
     minHeight: (theme) => ({
       ...theme('spacing'),
+      screen: '100vh',
     }),
     fontFamily: {
       silka: [

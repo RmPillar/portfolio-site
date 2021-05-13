@@ -23,7 +23,7 @@ export default function Intro() {
           data-scroll-speed='-3'
           data-scroll-direction='vertical'
         >
-          Frontend Developer - Sheffield
+          Developer - Sheffield
         </h2>
       </div>
     </section>
