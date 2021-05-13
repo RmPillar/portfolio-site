@@ -95,21 +95,48 @@ export default function PageModal() {
           <div className='md:flex flex-wrap w-full md-max:space-y-20'>
             {!isEmpty(projectData.url) && !isEmpty(projectData.title) && (
               <div className='md:w-4/12 xl:w-6/12'>
-                <a className='cursor-trigger' href={projectData.url}>
+                <a
+                  className='cursor-trigger'
+                  target='_blank'
+                  rel='noreferrer'
+                  href={projectData.url}
+                >
                   {projectData.title}
+                </a>
+              </div>
+            )}
+            {!isEmpty(projectData.api) && !isEmpty(projectData.title) && (
+              <div className='md:w-4/12 xl:w-6/12'>
+                <a
+                  className='cursor-trigger'
+                  target='_blank'
+                  rel='noreferrer'
+                  href={projectData.api}
+                >
+                  {projectData.title} API
                 </a>
               </div>
             )}
             {!isEmpty(projectData.github) && !isEmpty(projectData.title) && (
               <div className='md:w-4/12 xl:w-6/12'>
-                <a className='cursor-trigger' href={projectData.github}>
+                <a
+                  className='cursor-trigger'
+                  target='_blank'
+                  rel='noreferrer'
+                  href={projectData.github}
+                >
                   {projectData.title} Github
                 </a>
               </div>
             )}
             {!isEmpty(projectData.design) && !isEmpty(projectData.title) && (
               <div className='md:w-4/12 xl:w-6/12'>
-                <a className='cursor-trigger' href={projectData.design}>
+                <a
+                  className='cursor-trigger'
+                  target='_blank'
+                  rel='noreferrer'
+                  href={projectData.design}
+                >
                   {projectData.title} Design
                 </a>
               </div>

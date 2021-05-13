@@ -14,10 +14,10 @@ const Cursor = dynamic(() => import('./Cursor'), {
 function Page({ children }) {
   return (
     <section className='site-page flex flex-col min-h-screen'>
-      <Cursor />
       <Header />
       <MobileMenu />
       <Locomotive>{children}</Locomotive>
+      <Cursor />
     </section>
   );
 }

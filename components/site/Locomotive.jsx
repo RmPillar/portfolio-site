@@ -11,7 +11,7 @@ import LocomotiveScroll from 'locomotive-scroll';
 import { isNull } from 'lodash';
 
 export default function Locomotive({ children }) {
-  const { ref, width = 1, height = 1 } = useResizeObserver();
+  const { ref, width = 1 } = useResizeObserver();
   const [locomotive, setLocomotive] = useState(null);
   const { scroll, modal } = useSelector((state) => state.app);
   const dispatch = useDispatch();

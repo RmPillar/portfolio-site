@@ -11,6 +11,7 @@
       },
       "stack": ["Next.js", "Redux", "GSAP"],
       "url": "robinpillar.co.uk",
+      "design": "",
       "github": "https://github.com/RmPillar/portfolio-site"
     },
     {
@@ -27,7 +28,7 @@
       },
       "stack": ["Wordpress", "Vue", "GSAP"],
       "url": "",
-      "design": "https://www.figma.com/file/cHjg4zt821O8WnAh8e1iEr/Website-Design?node-id=0%3A1",
+      "design": "https://www.figma.com/file/cHjg4zt821O8WnAh8e1iEr/Website-Design?node-id=3%3A10",
       "github": ""
     },
     {
@@ -41,6 +42,8 @@
       "image": {},
       "stack": ["React (Web)", "React Native (Mobile)", "Node.js"],
       "url": "",
+      "design": "",
+      "api": "https://recipe-book-be.herokuapp.com/",
       "github": "https://github.com/RmPillar/RecipeBook"
     },
     {
@@ -51,6 +54,7 @@
       "image": {},
       "stack": ["React Native", "Redux"],
       "url": "",
+      "design": "",
       "github": "https://github.com/RmPillar/PokemonAdventure"
     }
   ]

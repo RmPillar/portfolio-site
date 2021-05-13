@@ -32,7 +32,6 @@ export default function Cursor() {
     setDark(false);
   }, []);
   const onMouseHover = useCallback(() => {
-    console.log('hello');
     setHover(true);
   }, []);
   const onMouseHoverOut = useCallback(() => {
@@ -61,37 +60,38 @@ export default function Cursor() {
       { target: null, event: 'mouseenter', callBack: onMouseIn },
       { target: null, event: 'mouseleave', callBack: onMouseOut },
       {
-        target: document.getElementsByClassName('cursor-trigger'),
+        target: document.querySelectorAll('.cursor-trigger'),
         event: 'mouseenter',
         callBack: onMouseHover,
       },
       {
-        target: document.getElementsByClassName('cursor-trigger'),
+        target: document.querySelectorAll('.cursor-trigger'),
         event: 'mouseleave',
         callBack: onMouseHoverOut,
       },
       {
-        target: document.getElementsByClassName('cursor-dark'),
+        target: document.querySelectorAll('.cursor-dark'),
         event: 'mouseenter',
         callBack: onMouseDark,
       },
       {
-        target: document.getElementsByClassName('cursor-dark'),
+        target: document.querySelectorAll('.cursor-dark'),
         event: 'mouseleave',
         callBack: onMouseDarkOut,
       },
       {
-        target: document.getElementsByClassName('cursor-arrow'),
+        target: document.querySelectorAll('.cursor-arrow'),
         event: 'mouseenter',
         callBack: onMouseArrow,
       },
       {
-        target: document.getElementsByClassName('cursor-arrow'),
+        target: document.querySelectorAll('.cursor-arrow'),
         event: 'mouseleave',
         callBack: onMouseArrowOut,
       },
     ],
     [
+      // document,
       onMouseIn,
       onMouseHover,
       onMouseHoverOut,
