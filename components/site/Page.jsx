@@ -11,12 +11,13 @@ const Cursor = dynamic(() => import('./Cursor'), {
   ssr: false,
 });
 
-function Page({ children }) {
+function Page({ children, locomotiveOn = false }) {
   return (
-    <section className='site-page flex flex-col min-h-screen'>
+    <section className='site-page flex flex-col h-screen min-h-screen'>
       <Header />
       <MobileMenu />
-      <Locomotive>{children}</Locomotive>
+      {locomotiveOn && <Locomotive>{children}</Locomotive>}
+      {!locomotiveOn && children}
       <Cursor />
     </section>
   );

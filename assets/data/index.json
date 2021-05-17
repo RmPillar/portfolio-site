@@ -2,6 +2,7 @@
   "projects": [
     {
       "title": "RobinPillar.co.uk",
+      "slug": "robin-pillar",
       "caption": "Web",
       "icon": {},
       "description": "My personal porfolio site, built to showcase the various development projects I have worked on, both personal and professional. \n\nThis site has been built using Next.js, along with GSAP and Locomotoive Scroll for the animations and scroll behaviour",
@@ -16,6 +17,7 @@
     },
     {
       "title": "Life Dronfield",
+      "slug": "life-dronfield",
       "caption": "Web",
       "icon": {
         "src": "/img/life-logo.png",
@@ -33,6 +35,7 @@
     },
     {
       "title": "RecipeBook",
+      "slug": "recipebook",
       "caption": "Web & Mobile App",
       "icon": {
         "src": "/img/recipebook-logo.png",
@@ -48,6 +51,7 @@
     },
     {
       "title": "Pokemon Adventure",
+      "slug": "pokemon-adventure",
       "caption": "Mobile App",
       "icon": { "src": "/img/pikachu.png", "alt": "Pikachu" },
       "description": "##### Can you build a game in React Native? \n\nWhen trying to learn React Native, I decided I wanted to build some kind of interactive game and take a look at the challenges involved in doing so with this framework. \n\nUsing the PokeAPI to provide the pokemon data, and the current pokemon games for the general battle logic, I was able to build a mobile game for both iOS and Android based on the much loved Pokemon series I grew up with",
