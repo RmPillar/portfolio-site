@@ -9,6 +9,7 @@ import data from '../../assets/data/index.json';
 import Hero from '../../components/project/Hero';
 import Intro from '../../components/project/Intro';
 import TechStack from '../../components/project/TechStack';
+import Links from '../../components/project/Links';
 
 export default function ProjectPage({ project }) {
   const { menuOpen } = useSelector((state) => state.app);
@@ -22,7 +23,16 @@ export default function ProjectPage({ project }) {
     <Page>
       <Hero data={project} />
       <Intro data={project} classes='mb-50' />
-      <TechStack data={project} classes='pb-50' />
+      <div className='container'>
+        <div className='lg:flex row'>
+          <div className='column lg:w-6/12'>
+            <TechStack data={project} classes='mb-50' />
+          </div>
+          <div className='column lg:w-6/12'>
+            <Links data={project} classes='pb-50' />
+          </div>
+        </div>
+      </div>
       <div
         onClick={onClick}
         className={classNames(

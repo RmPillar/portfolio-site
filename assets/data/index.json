@@ -15,9 +15,14 @@
         { "title": "Redux", "icon": "redux" },
         { "title": "GSAP", "icon": null }
       ],
-      "url": "robinpillar.co.uk",
-      "design": "",
-      "github": "https://github.com/RmPillar/portfolio-site"
+      "links": [
+        { "url": "robinpillar.co.uk", "label": "Website", "icon": "web" },
+        {
+          "url": "https://github.com/RmPillar/portfolio-site",
+          "label": "Github",
+          "icon": "github"
+        }
+      ]
     },
     {
       "title": "Life Dronfield",
@@ -34,12 +39,16 @@
       },
       "stack": [
         { "title": "Wordpress", "icon": "wordpress" },
-        { "title": "Vue", "icon": "null" },
+        { "title": "Vue", "icon": "vue" },
         { "title": "JS", "icon": "javascript" }
       ],
-      "url": "",
-      "design": "https://www.figma.com/file/cHjg4zt821O8WnAh8e1iEr/Website-Design?node-id=3%3A10",
-      "github": ""
+      "links": [
+        {
+          "url": "https://www.figma.com/file/cHjg4zt821O8WnAh8e1iEr/Website-Design?node-id=3%3A10",
+          "label": "Design",
+          "icon": "figma"
+        }
+      ]
     },
     {
       "title": "RecipeBook",
@@ -56,10 +65,19 @@
         { "title": "React Native - Mobile", "icon": "react" },
         { "title": "Node.js - API", "icon": "node" }
       ],
-      "url": "",
-      "design": "",
-      "api": "https://recipe-book-be.herokuapp.com/",
-      "github": "https://github.com/RmPillar/RecipeBook"
+
+      "links": [
+        {
+          "url": "https://recipe-book-be.herokuapp.com/",
+          "label": "RecipeBook API",
+          "icon": null
+        },
+        {
+          "url": "https://github.com/RmPillar/RecipeBook",
+          "label": "Github",
+          "icon": "github"
+        }
+      ]
     },
     {
       "title": "Pokemon Adventure",
@@ -72,9 +90,13 @@
         { "title": "React Native", "icon": "react" },
         { "title": "Redux", "icon": "redux" }
       ],
-      "url": "",
-      "design": "",
-      "github": "https://github.com/RmPillar/PokemonAdventure"
+      "links": [
+        {
+          "url": "https://github.com/RmPillar/PokemonAdventure",
+          "label": "Github",
+          "icon": "github"
+        }
+      ]
     }
   ]
 }
