@@ -10,7 +10,11 @@
         "src": "/img/robin-pillar-site.png",
         "alt": "Robin Pillar Site"
       },
-      "stack": ["Next.js", "Redux", "GSAP"],
+      "stack": [
+        { "title": "Next.js", "icon": "next" },
+        { "title": "Redux", "icon": "redux" },
+        { "title": "GSAP", "icon": null }
+      ],
       "url": "robinpillar.co.uk",
       "design": "",
       "github": "https://github.com/RmPillar/portfolio-site"
@@ -28,7 +32,11 @@
         "src": "/img/life-logo.png",
         "alt": "Life Dronfield"
       },
-      "stack": ["Wordpress", "Vue", "GSAP"],
+      "stack": [
+        { "title": "Wordpress", "icon": "wordpress" },
+        { "title": "Vue", "icon": "null" },
+        { "title": "JS", "icon": "javascript" }
+      ],
       "url": "",
       "design": "https://www.figma.com/file/cHjg4zt821O8WnAh8e1iEr/Website-Design?node-id=3%3A10",
       "github": ""
@@ -43,7 +51,11 @@
       },
       "description": "As someone who spends much of his free time either coding or baking, I wanted to build something that would involve both of these hobbies. \n\nRecipeBook is a web and mobile app designed to be a way for people to store and display all their recipes in a fun, much more UX friendly way, without the pages and pages of personal stories and anecdotes that fill the majority of current recipe/blog sites",
       "image": {},
-      "stack": ["React (Web)", "React Native (Mobile)", "Node.js"],
+      "stack": [
+        { "title": "Next.js - Web", "icon": "next" },
+        { "title": "React Native - Mobile", "icon": "react" },
+        { "title": "Node.js - API", "icon": "node" }
+      ],
       "url": "",
       "design": "",
       "api": "https://recipe-book-be.herokuapp.com/",
@@ -56,7 +68,10 @@
       "icon": { "src": "/img/pikachu.png", "alt": "Pikachu" },
       "description": "##### Can you build a game in React Native? \n\nWhen trying to learn React Native, I decided I wanted to build some kind of interactive game and take a look at the challenges involved in doing so with this framework. \n\nUsing the PokeAPI to provide the pokemon data, and the current pokemon games for the general battle logic, I was able to build a mobile game for both iOS and Android based on the much loved Pokemon series I grew up with",
       "image": {},
-      "stack": ["React Native", "Redux"],
+      "stack": [
+        { "title": "React Native", "icon": "react" },
+        { "title": "Redux", "icon": "redux" }
+      ],
       "url": "",
       "design": "",
       "github": "https://github.com/RmPillar/PokemonAdventure"

@@ -8,6 +8,7 @@
     "start": "next start"
   },
   "dependencies": {
+    "@svgr/webpack": "^5.5.0",
     "classnames": "^2.2.6",
     "emailjs-com": "^2.6.4",
     "gsap": "^3.6.0",

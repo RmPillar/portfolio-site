@@ -18,6 +18,7 @@ function Page({ children, locomotiveOn = false }) {
     <section className='site-page flex flex-col h-screen min-h-screen'>
       <Head>
         <title>Robin Pillar</title>
+        <link rel='icon' type='image/png' sizes='32x32' href='/favicon.png' />
         <meta name='viewport' content='initial-scale=1.0, width=device-width' />
       </Head>
       <Header />

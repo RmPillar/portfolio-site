@@ -4,7 +4,7 @@ import { useSelector, useDispatch } from 'react-redux';
 import { toggleModal } from '../../store/actions/app';
 
 import Image from 'next/image';
-import Cross from '../svg/Cross';
+// import Cross from '../svg/Cross';
 
 import ReactMarkdown from 'react-markdown';
 
@@ -47,7 +47,7 @@ export default function PageModal() {
         className='home-pageModal__button absolute top-0 left-0 rounded-full mt-20 ml-20 h-50 min-h-50 w-50 min-w-50 text-white bg-gradient-to-tr from-indigo-600 to-indigo-400 cursor-trigger'
         onClick={onClick}
       >
-        <Cross />
+        {/* <Cross /> */}
       </button>
 
       {!isEmpty(projectData.title) && (

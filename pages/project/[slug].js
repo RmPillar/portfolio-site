@@ -8,6 +8,7 @@ import classNames from 'classnames';
 import data from '../../assets/data/index.json';
 import Hero from '../../components/project/Hero';
 import Intro from '../../components/project/Intro';
+import TechStack from '../../components/project/TechStack';
 
 export default function ProjectPage({ project }) {
   const { menuOpen } = useSelector((state) => state.app);
@@ -20,8 +21,8 @@ export default function ProjectPage({ project }) {
   return (
     <Page>
       <Hero data={project} />
-      <Intro data={project} />
-
+      <Intro data={project} classes='mb-50' />
+      <TechStack data={project} classes='pb-50' />
       <div
         onClick={onClick}
         className={classNames(
@@ -45,12 +46,6 @@ export async function getStaticPaths() {
 }
 
 export async function getStaticProps({ params: { slug } }) {
-  if (!data) {
-    return {
-      notFound: true,
-    };
-  }
-
   const [project] = data.projects.filter((project) => project.slug === slug);
   return {
     props: { project },
