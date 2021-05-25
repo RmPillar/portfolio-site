@@ -1,13 +1,45 @@
-import { isEmpty } from 'lodash';
-import React from 'react';
+import React, { useEffect, useRef } from 'react';
+
+import Image from 'next/image';
 
 import { useDispatch } from 'react-redux';
 import { setProject, toggleModal } from '../../store/actions/app';
 
-import Image from 'next/image';
+import { useLocomotive } from '../../contexts/LocomotiveContext';
+
+import gsap from 'gsap';
+import { isEmpty, isNull, isObject } from 'lodash';
 
 export default function Card({ project: { title, caption, icon }, index }) {
   const dispatch = useDispatch();
+
+  const cardRef = useRef();
+  const locomotive = useLocomotive();
+  const map = (x, a, b, c, d) => ((x - a) * (d - c)) / (b - a) + c;
+
+  useEffect(() => {
+    if (
+      !isNull(locomotive) &&
+      window.matchMedia(`(min-width: 1025px)`).matches
+    ) {
+      locomotive.on('scroll', ({ currentElements }) => {
+        if (isObject(currentElements[`card-${index}`])) {
+          const progress = currentElements[`card-${index}`].progress;
+          const translationVal =
+            progress > 0.75 ? map(progress, 0.75, 1, 5, 200) : 0;
+
+          const rotationVal =
+            progress > 0.75 ? map(progress, 0.75, 1, 0, -60) : 0;
+
+          gsap.to(currentElements[`card-${index}`].el, {
+            y: `${translationVal}%`,
+            rotate: rotationVal,
+          });
+        }
+      });
+      locomotive.update();
+    }
+  }, [locomotive, cardRef]);
 
   const onClick = () => {
     dispatch(toggleModal(true));
@@ -15,7 +47,12 @@ export default function Card({ project: { title, caption, icon }, index }) {
   };
 
   return (
-    <div className='home-card cursor-trigger xl-max:column mb-20' data-scroll>
+    <div
+      className='home-card cursor-trigger xl-max:column mb-20'
+      data-scroll
+      data-scroll-id={`card-${index}`}
+      ref={cardRef}
+    >
       <button
         onClick={onClick}
         className='block h-full w-full transform hover:scale-105 transition-transform duration-500 rounded-20 shadow-xl text-center'

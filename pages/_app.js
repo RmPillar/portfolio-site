@@ -9,7 +9,9 @@ const store = createStore(rootReducer);
 function MyApp({ Component, pageProps }) {
   return (
     <Provider store={store}>
-      <Component {...pageProps} />
+      <main data-scroll-container>
+        <Component {...pageProps} />
+      </main>
     </Provider>
   );
 }

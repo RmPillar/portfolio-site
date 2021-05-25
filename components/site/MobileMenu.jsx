@@ -1,17 +1,32 @@
 import React from 'react';
 
+import { useRouter } from 'next/router';
+import Link from 'next/link';
+
 import { useSelector, useDispatch } from 'react-redux';
-import { setScroll, toggleMenu } from '../../store/actions/app';
+import { toggleMenu } from '../../store/actions/app';
+import { useLocomotive } from '../../contexts/LocomotiveContext';
 
 import classNames from 'classnames';
 
 export default function MobileMenu() {
+  const router = useRouter();
+  const locomotive = useLocomotive();
+  const isProject = router.pathname.includes('/project/');
   const { menuOpen } = useSelector((state) => state.app);
   const dispatch = useDispatch();
 
   const onClick = (id) => {
-    dispatch(toggleMenu());
-    dispatch(setScroll(id));
+    if (!isProject) {
+      const target = document.querySelector(id);
+      locomotive.scrollTo(target, {
+        offset: -100,
+        easing: [0.16, 1, 0.3, 1],
+        duration: 2000,
+      });
+      dispatch(toggleMenu());
+      // dispatch(setScroll(id));
+    }
   };
 
   return (
@@ -22,6 +37,9 @@ export default function MobileMenu() {
       )}
     >
       <div className='px-40 py-80 flex flex-col items-start space-y-60 mt-50 text-white'>
+        <Link href='/'>
+          <a className='heading cursor-trigger'>Robin Pillar</a>
+        </Link>
         <button
           className='heading cursor-trigger'
           onClick={() => onClick('#home')}

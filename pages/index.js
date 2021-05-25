@@ -19,12 +19,12 @@ export default function Home({ data }) {
     dispatch(toggleModal(false));
   };
   return (
-    <Page locomotiveOn={true}>
+    <Page>
       <section className='flex xl-max:flex-col h-screen min-w-screen relative justify-start'>
         <Intro />
         <List projects={data.projects} />
         <Contact />
-        <Modal />
+        {/* <Modal /> */}
         <div
           onClick={onClick}
           className={classNames(
