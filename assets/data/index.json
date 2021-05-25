@@ -16,7 +16,11 @@
         { "title": "GSAP", "icon": null }
       ],
       "links": [
-        { "url": "robinpillar.co.uk", "label": "Website", "icon": "web" },
+        {
+          "url": "https://robinpillar.co.uk",
+          "label": "Website",
+          "icon": "web"
+        },
         {
           "url": "https://github.com/RmPillar/portfolio-site",
           "label": "Github",

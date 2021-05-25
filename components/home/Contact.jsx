@@ -40,7 +40,7 @@ export default function Contact() {
   return (
     <section
       data-scroll-section
-      className='home-contact max-w-screen w-screen h-screen bg-gray-100'
+      className='home-contact max-w-screen w-screen h-screen relative bg-gray-100'
       id='contact'
     >
       <div className='container py-25 h-full flex items-center justify-center'>

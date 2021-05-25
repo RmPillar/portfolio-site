@@ -4,7 +4,7 @@ import Card from './Card';
 export default function List({ projects }) {
   return (
     <section
-      className='home-list w-auto xl:h-screen xl-max:pb-50 xl:px-100 bg-gray-100 xl-max:container'
+      className='home-list w-auto xl:h-screen xl-max:pb-50 xl:px-100 bg-gray-100 relative xl-max:container'
       id='projects'
       data-scroll-section
     >

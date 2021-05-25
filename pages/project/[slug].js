@@ -21,28 +21,30 @@ export default function ProjectPage({ project }) {
 
   return (
     <Page>
-      <Hero data={project} />
-      <Intro data={project} classes='mb-50' />
-      <div className='container'>
-        <div className='lg:flex row'>
-          <div className='column lg:w-6/12'>
-            <TechStack data={project} classes='mb-50' />
-          </div>
-          <div className='column lg:w-6/12'>
-            <Links data={project} classes='pb-50' />
+      <div className='min-h-screen flex flex-col'>
+        <Hero data={project} />
+        <Intro data={project} classes='mb-50' />
+        <div className='container'>
+          <div className='lg:flex row'>
+            <div className='column lg:w-6/12'>
+              <TechStack data={project} classes='mb-50' />
+            </div>
+            <div className='column lg:w-6/12'>
+              <Links data={project} classes='pb-50' />
+            </div>
           </div>
         </div>
+        <div
+          onClick={onClick}
+          className={classNames(
+            'fixed inset-0 w-screen h-screen bg-black transition-opacity duration-500 z-20',
+            {
+              'opacity-50 pointer-events-auto': menuOpen,
+              'opacity-0 pointer-events-none': !menuOpen,
+            }
+          )}
+        ></div>
       </div>
-      <div
-        onClick={onClick}
-        className={classNames(
-          'fixed inset-0 w-screen h-screen bg-black transition-opacity duration-500 z-20',
-          {
-            'opacity-50 pointer-events-auto': menuOpen,
-            'opacity-0 pointer-events-none': !menuOpen,
-          }
-        )}
-      ></div>
     </Page>
   );
 }

@@ -18,6 +18,7 @@ export default function Home({ data }) {
   const onClick = () => {
     dispatch(toggleModal(false));
   };
+
   return (
     <Page>
       <section className='flex xl-max:flex-col h-screen min-w-screen relative justify-start'>

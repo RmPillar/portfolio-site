@@ -1,3 +1,4 @@
+import { useRouter } from 'next/router';
 import React, { createContext, useEffect, useState } from 'react';
 
 export const LocomotiveContext = createContext({
@@ -6,9 +7,11 @@ export const LocomotiveContext = createContext({
 
 export const LocomotiveProvider = ({ children, options }) => {
   const [locomotive, setLocomotive] = useState(null);
+  const router = useRouter();
+  const isProject = router.pathname.includes('/project/');
 
   useEffect(() => {
-    if (!locomotive) {
+    if (!locomotive && !isProject) {
       (async () => {
         try {
           const LocomotiveScroll = (await import('locomotive-scroll')).default;
