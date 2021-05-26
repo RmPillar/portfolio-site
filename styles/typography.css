@@ -139,6 +139,17 @@ body {
   }
 }
 
+.heading-2xs {
+  font-weight: 500;
+  font-size: 1.125rem;
+  @screen md {
+    font-size: 1.5rem;
+  }
+  @screen xl {
+    font-size: 1.75rem;
+  }
+}
+
 @responsive {
   .copy-l {
     font-weight: 400;

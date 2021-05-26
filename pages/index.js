@@ -3,9 +3,8 @@ import { toggleModal } from '../store/actions/app';
 
 import Page from '../components/site/Page';
 import Intro from '../components/home/Intro';
-import List from '../components/home/List';
+import ProjectList from '../components/home/ProjectList';
 import Contact from '../components/home/Contact';
-import Modal from '../components/home/Modal';
 
 import classNames from 'classnames';
 
@@ -18,13 +17,13 @@ export default function Home({ data }) {
   const onClick = () => {
     dispatch(toggleModal(false));
   };
+
   return (
-    <Page locomotiveOn={true}>
+    <Page>
       <section className='flex xl-max:flex-col h-screen min-w-screen relative justify-start'>
         <Intro />
-        <List projects={data.projects} />
+        <ProjectList projects={data.projects} />
         <Contact />
-        <Modal />
         <div
           onClick={onClick}
           className={classNames(
