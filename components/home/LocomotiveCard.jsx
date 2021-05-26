@@ -5,7 +5,7 @@ import { useLocomotive } from '../../contexts/LocomotiveContext';
 import gsap from 'gsap';
 import { isNull, isObject } from 'lodash';
 
-function LocomotiveCard({ index, children }) {
+function LocomotiveCard({ index, classes, children }) {
   const cardRef = useRef();
   const locomotive = useLocomotive();
   const map = (x, a, b, c, d) => ((x - a) * (d - c)) / (b - a) + c;
@@ -35,7 +35,12 @@ function LocomotiveCard({ index, children }) {
   }, [locomotive, cardRef]);
 
   return (
-    <div data-scroll data-scroll-id={`card-${index}`} ref={cardRef}>
+    <div
+      data-scroll
+      data-scroll-id={`card-${index}`}
+      ref={cardRef}
+      className={classes}
+    >
       {children}
     </div>
   );

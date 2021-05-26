@@ -35,7 +35,7 @@ function ScrollSection({
           {heading}
         </h1>
       )}
-      <div className='h-full flex items-center'>{children}</div>
+      <div className='xl:h-full xl:flex items-center'>{children}</div>
     </section>
   );
 }
