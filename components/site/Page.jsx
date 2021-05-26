@@ -5,9 +5,10 @@ import Head from 'next/head';
 import { useRouter } from 'next/router';
 
 import Header from './Header';
-import MainMenu from './MainMenu';
 
 import { LocomotiveProvider } from '../../contexts/LocomotiveContext';
+import ProjectMenu from '../project/ProjectMenu';
+import HomeMenu from '../home/HomeMenu';
 
 const Cursor = dynamic(() => import('./Cursor'), {
   ssr: false,
@@ -16,6 +17,7 @@ const Cursor = dynamic(() => import('./Cursor'), {
 function Page({ data, children }) {
   const router = useRouter();
   const isProject = router.pathname.includes('/project/');
+
   return (
     <LocomotiveProvider>
       <Head>
@@ -26,7 +28,8 @@ function Page({ data, children }) {
 
       <Header />
       <Cursor />
-      <MainMenu />
+      {isProject && <ProjectMenu />}
+      {!isProject && <HomeMenu />}
       <section
         className='site-page flex flex-col min-h-screen'
         data-scroll-container
