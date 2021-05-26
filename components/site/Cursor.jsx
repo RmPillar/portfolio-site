@@ -6,6 +6,8 @@ import React, {
   useRef,
 } from 'react';
 
+import { useRouter } from 'next/router';
+
 import classNames from 'classnames';
 import gsap from 'gsap';
 
@@ -16,6 +18,8 @@ export default function Cursor() {
   const [hover, setHover] = useState(false);
   const [hidden, setHidden] = useState(false);
   const [arrow, setArrow] = useState(false);
+
+  const router = useRouter();
 
   const cursorRef = useRef();
 
@@ -91,7 +95,7 @@ export default function Cursor() {
       },
     ],
     [
-      // document,
+      document,
       onMouseIn,
       onMouseHover,
       onMouseHoverOut,

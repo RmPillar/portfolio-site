@@ -2,14 +2,14 @@ import { useDispatch, useSelector } from 'react-redux';
 import { toggleModal } from '../../store/actions/app';
 
 import Page from '../../components/site/Page';
-
-import classNames from 'classnames';
-
-import data from '../../assets/data/index.json';
 import Hero from '../../components/project/Hero';
 import Intro from '../../components/project/Intro';
 import TechStack from '../../components/project/TechStack';
 import Links from '../../components/project/Links';
+
+import classNames from 'classnames';
+
+import data from '../../assets/data/index.json';
 
 export default function ProjectPage({ project }) {
   const { menuOpen } = useSelector((state) => state.app);
@@ -21,7 +21,7 @@ export default function ProjectPage({ project }) {
 
   return (
     <Page>
-      <div className='min-h-screen flex flex-col'>
+      <div className='flex flex-col'>
         <Hero data={project} />
         <Intro data={project} classes='mb-50' />
         <div className='container'>

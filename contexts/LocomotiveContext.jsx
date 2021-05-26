@@ -1,24 +1,25 @@
-import { useRouter } from 'next/router';
 import React, { createContext, useEffect, useState } from 'react';
+import { useRouter } from 'next/router';
 
 export const LocomotiveContext = createContext({
   locomotive: null,
 });
 
-export const LocomotiveProvider = ({ children, options }) => {
+export const LocomotiveProvider = ({ children }) => {
   const [locomotive, setLocomotive] = useState(null);
   const router = useRouter();
   const isProject = router.pathname.includes('/project/');
 
   useEffect(() => {
-    if (!locomotive && !isProject) {
+    if (!locomotive) {
       (async () => {
         try {
           const LocomotiveScroll = (await import('locomotive-scroll')).default;
 
-          const direction = window.matchMedia(`(min-width: 1025px)`).matches
-            ? 'horizontal'
-            : 'vertical';
+          const direction =
+            window.matchMedia(`(min-width: 1025px)`).matches && !isProject
+              ? 'horizontal'
+              : 'vertical';
           setLocomotive(
             new LocomotiveScroll({
               el:
@@ -33,6 +34,10 @@ export const LocomotiveProvider = ({ children, options }) => {
           throw Error(`[LocomotiveProvider]: ${error}`);
         }
       })();
+    }
+
+    if (locomotive) {
+      locomotive.update();
     }
 
     return () => {
