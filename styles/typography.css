@@ -218,7 +218,7 @@ body {
 
   p,
   li {
-    @apply copy;
+    @apply copy-l;
   }
 
   h1,

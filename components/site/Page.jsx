@@ -28,8 +28,8 @@ function Page({ data, children }) {
 
       <Header />
       <Cursor />
-      {isProject && <ProjectMenu />}
-      {!isProject && <HomeMenu />}
+      {isProject && <ProjectMenu data={data} />}
+      {!isProject && <HomeMenu data={data} />}
       <section
         className='site-page flex flex-col min-h-screen'
         data-scroll-container

@@ -15,7 +15,6 @@ function LocomotiveCard({ index, classes, children }) {
       window.matchMedia(`(min-width: 1025px)`).matches
     ) {
       locomotive.on('scroll', ({ currentElements }) => {
-        console.log(currentElements);
         if (isObject(currentElements[`card-${index}`])) {
           const progress = currentElements[`card-${index}`].progress;
           const translationVal =

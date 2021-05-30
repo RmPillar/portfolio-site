@@ -11,7 +11,7 @@ import classNames from 'classnames';
 
 import data from '../../assets/data/index.json';
 
-export default function ProjectPage({ project }) {
+export default function ProjectPage({ project, projects }) {
   const { menuOpen } = useSelector((state) => state.app);
   const dispatch = useDispatch();
 
@@ -20,7 +20,7 @@ export default function ProjectPage({ project }) {
   };
 
   return (
-    <Page>
+    <Page data={projects}>
       <div className='flex flex-col'>
         <Hero data={project} />
         <Intro data={project} classes='mb-50' />
@@ -60,6 +60,6 @@ export async function getStaticPaths() {
 export async function getStaticProps({ params: { slug } }) {
   const [project] = data.projects.filter((project) => project.slug === slug);
   return {
-    props: { project },
+    props: { project, projects: data.projects },
   };
 }
