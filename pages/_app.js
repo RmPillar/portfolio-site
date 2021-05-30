@@ -1,16 +1,12 @@
-import { Provider } from 'react-redux';
-import { createStore } from 'redux';
-import rootReducer from '../store/reducers/root';
-
 import '../styles/styles.css';
 
-const store = createStore(rootReducer);
+import { MenuProvider } from '../contexts/MenuContext';
 
 function MyApp({ Component, pageProps }) {
   return (
-    <Provider store={store}>
+    <MenuProvider>
       <Component {...pageProps} />
-    </Provider>
+    </MenuProvider>
   );
 }
 

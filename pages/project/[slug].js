@@ -1,5 +1,4 @@
-import { useDispatch, useSelector } from 'react-redux';
-import { toggleModal } from '../../store/actions/app';
+import React from 'react';
 
 import Page from '../../components/site/Page';
 import Hero from '../../components/project/Hero';
@@ -7,18 +6,9 @@ import Intro from '../../components/project/Intro';
 import TechStack from '../../components/project/TechStack';
 import Links from '../../components/project/Links';
 
-import classNames from 'classnames';
-
 import data from '../../assets/data/index.json';
 
 export default function ProjectPage({ project, projects }) {
-  const { menuOpen } = useSelector((state) => state.app);
-  const dispatch = useDispatch();
-
-  const onClick = () => {
-    dispatch(toggleModal(false));
-  };
-
   return (
     <Page data={projects}>
       <div className='flex flex-col'>
@@ -34,16 +24,6 @@ export default function ProjectPage({ project, projects }) {
             </div>
           </div>
         </div>
-        <div
-          onClick={onClick}
-          className={classNames(
-            'fixed inset-0 w-screen h-screen bg-black transition-opacity duration-500 z-20',
-            {
-              'opacity-50 pointer-events-auto': menuOpen,
-              'opacity-0 pointer-events-none': !menuOpen,
-            }
-          )}
-        ></div>
       </div>
     </Page>
   );

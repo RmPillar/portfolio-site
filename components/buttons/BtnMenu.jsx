@@ -1,16 +1,14 @@
 import React from 'react';
 
-import { useDispatch, useSelector } from 'react-redux';
-import { toggleMenu } from '../../store/actions/app';
+import { useMenu } from '../../contexts/MenuContext';
 
 import classNames from 'classnames';
 
 export default function BtnMenu({ classes }) {
-  const dispatch = useDispatch();
-  const { menuOpen } = useSelector((state) => state.app);
+  const { menuOpen, setMenuOpen } = useMenu();
 
   const onClick = () => {
-    dispatch(toggleMenu());
+    setMenuOpen(!menuOpen);
   };
 
   return (

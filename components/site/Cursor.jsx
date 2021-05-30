@@ -48,8 +48,8 @@ export default function Cursor() {
     setArrow(false);
   }, []);
 
-  const events = useMemo(
-    () => [
+  const events = useMemo(() => {
+    return [
       {
         target: null,
         event: 'mousemove',
@@ -93,24 +93,24 @@ export default function Cursor() {
         event: 'mouseleave',
         callBack: onMouseArrowOut,
       },
-    ],
-    [
-      document,
-      onMouseIn,
-      onMouseHover,
-      onMouseHoverOut,
-      onMouseDark,
-      onMouseDarkOut,
-      onMouseOut,
-      onMouseArrow,
-      onMouseArrowOut,
-    ]
-  );
+    ];
+  }, [
+    document,
+    router.pathname,
+    onMouseIn,
+    onMouseHover,
+    onMouseHoverOut,
+    onMouseDark,
+    onMouseDarkOut,
+    onMouseOut,
+    onMouseArrow,
+    onMouseArrowOut,
+  ]);
 
   useEffect(() => {
     initEvents(events);
     return () => destroyEvents(events);
-  }, [events]);
+  }, [events, router.pathname]);
 
   return (
     <div

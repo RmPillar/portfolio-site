@@ -1,12 +1,11 @@
 import React from 'react';
 
-import { useDispatch } from 'react-redux';
-import { toggleMenu } from '../../store/actions/app';
 import { useLocomotive } from '../../contexts/LocomotiveContext';
+import { useMenu } from '../../contexts/MenuContext';
 
 function BtnScroll({ label = '', scrollTo }) {
   const locomotive = useLocomotive();
-  const dispatch = useDispatch();
+  const { setMenuOpen } = useMenu();
 
   const onClick = () => {
     const target = document.querySelector(scrollTo);
@@ -15,7 +14,7 @@ function BtnScroll({ label = '', scrollTo }) {
       easing: [0.16, 1, 0.3, 1],
       duration: 2000,
     });
-    dispatch(toggleMenu());
+    setMenuOpen(false);
   };
 
   return (

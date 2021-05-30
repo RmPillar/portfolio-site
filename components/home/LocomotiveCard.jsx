@@ -29,7 +29,10 @@ function LocomotiveCard({ index, classes, children }) {
           });
         }
       });
-      locomotive.update();
+
+      if (locomotive) {
+        locomotive.update();
+      }
     }
   }, [locomotive, cardRef]);
 
