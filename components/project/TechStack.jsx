@@ -5,7 +5,6 @@ import SvgIcon from '../global/SvgIcon';
 import classNames from 'classnames';
 
 function TechStack({ data: { stack }, classes = '' }) {
-  console.log(stack);
   return (
     <section className={classNames('project-techStack', classes)}>
       <h3 className='heading mb-20'>Tech Stack</h3>
