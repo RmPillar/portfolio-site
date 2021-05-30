@@ -1,7 +1,7 @@
 import React from 'react';
-import BtnScroll from '../buttons/BtnScroll';
 
 import MainMenu from '../site/MainMenu';
+import BtnScroll from '../buttons/BtnScroll';
 
 export default function HomeMenu() {
   return (

@@ -1,12 +1,11 @@
 import React from 'react';
 
-import { useSelector } from 'react-redux';
+import { useMenu } from '../../contexts/MenuContext';
 
 import classNames from 'classnames';
 
 export default function MainMenu({ children }) {
-  const { menuOpen } = useSelector((state) => state.app);
-
+  const { menuOpen } = useMenu();
   return (
     <section
       className={classNames(

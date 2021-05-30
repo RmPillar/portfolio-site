@@ -1,17 +1,17 @@
 import React from 'react';
 
 import { useRouter } from 'next/router';
-import { useDispatch } from 'react-redux';
-import { toggleMenu } from '../../store/actions/app';
 
 import MainMenu from '../site/MainMenu';
 
+import { useMenu } from '../../contexts/MenuContext';
+
 export default function ProjectMenu({ data }) {
   const router = useRouter();
-  const dispatch = useDispatch();
+  const { setMenuOpen } = useMenu();
 
   const handleClick = (url) => {
-    dispatch(toggleMenu());
+    setMenuOpen(false);
     router.push(url);
   };
 
