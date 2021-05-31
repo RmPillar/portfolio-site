@@ -1,6 +1,5 @@
 import React from 'react';
 
-import dynamic from 'next/dynamic';
 import Head from 'next/head';
 import { useRouter } from 'next/router';
 
@@ -12,10 +11,6 @@ import { LocomotiveProvider } from '../../contexts/LocomotiveContext';
 import { useMenu } from '../../contexts/MenuContext';
 
 import classNames from 'classnames';
-
-const Cursor = dynamic(() => import('./Cursor'), {
-  ssr: false,
-});
 
 function Page({ data, children }) {
   const router = useRouter();
