@@ -13,10 +13,6 @@ import { useMenu } from '../../contexts/MenuContext';
 
 import classNames from 'classnames';
 
-const Cursor = dynamic(() => import('./Cursor'), {
-  ssr: false,
-});
-
 function Page({ data, children }) {
   const router = useRouter();
   const { menuOpen, setMenuOpen } = useMenu();
