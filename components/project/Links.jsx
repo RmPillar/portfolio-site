@@ -15,7 +15,7 @@ function Links({ data: { links }, classes }) {
             label={link.label}
             icon={link.icon}
             url={link.url}
-            classes='w-10/12 xl:w-5/12 mr-20 mb-20 cursor-trigger'
+            classes='w-10/12 xl:w-5/12 mr-20 mb-20'
           />
         ))}
       </div>

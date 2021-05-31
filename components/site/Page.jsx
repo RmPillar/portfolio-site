@@ -35,7 +35,7 @@ function Page({ data, children }) {
       </Head>
 
       <Header />
-      <Cursor />
+
       {isProject && <ProjectMenu data={data} />}
       {!isProject && <HomeMenu data={data} />}
 

@@ -3,6 +3,7 @@ import React from 'react';
 import { useRouter } from 'next/router';
 
 import MainMenu from '../site/MainMenu';
+import CursorHover from '../site/CursorHover';
 
 import { useMenu } from '../../contexts/MenuContext';
 
@@ -17,26 +18,30 @@ export default function ProjectMenu({ data }) {
 
   return (
     <MainMenu>
-      <a
-        onClick={(e) => {
-          e.preventDefault();
-          handleClick('/');
-        }}
-        className='heading-s cursor-trigger'
-      >
-        Robin Pillar
-      </a>
-      {data.map((project, index) => (
+      <CursorHover>
         <a
           onClick={(e) => {
             e.preventDefault();
-            handleClick(project.slug);
+            handleClick('/');
           }}
-          className='heading-s cursor-trigger'
-          key={index}
+          className='heading-s'
         >
-          {project.title}
+          Robin Pillar
         </a>
+      </CursorHover>
+      {data.map((project, index) => (
+        <CursorHover>
+          <a
+            onClick={(e) => {
+              e.preventDefault();
+              handleClick(project.slug);
+            }}
+            className='heading-s'
+            key={index}
+          >
+            {project.title}
+          </a>
+        </CursorHover>
       ))}
     </MainMenu>
   );

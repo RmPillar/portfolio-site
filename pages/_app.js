@@ -1,12 +1,15 @@
 import '../styles/styles.css';
 
 import { MenuProvider } from '../contexts/MenuContext';
+import { CursorProvider } from '../contexts/CursorContext';
 
 function MyApp({ Component, pageProps }) {
   return (
-    <MenuProvider>
-      <Component {...pageProps} />
-    </MenuProvider>
+    <CursorProvider>
+      <MenuProvider>
+        <Component {...pageProps} />
+      </MenuProvider>
+    </CursorProvider>
   );
 }
 
